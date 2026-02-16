@@ -8,7 +8,7 @@ import {
 
 import David from "../Imagenes/Componentes/FotoDavid.jpg";
 import Luismi from "../Imagenes/Componentes/FotoLuismi.jpeg";
-import Victor from "../Imagenes/Componentes/FotoDelegado.png";
+import Victor from "../Imagenes/Componentes/Foto_Delegado.png";
 import Eva from "../Imagenes/Componentes/FotoEva.jpg";
 import JoseAndres from "../Imagenes/Componentes/FotoJoseAndres.jpg";
 import Michel from "../Imagenes/Componentes/FotoMichel.jpg";
@@ -21,7 +21,7 @@ const teamMembers = [
   { id: 2, name: "David Jiménez Villena", specialty: "Web Developer / Gamer Developer", image: David, social: { Portfolio: "https://djsekai34.github.io/DJVPortFolio/", linkedin: "https://www.linkedin.com/in/david-jimenez-villena/" }, status: "online" },
   { id: 3, name: "Luis Miguel Escuderos Alcaide", specialty: "Art 3D", image: Luismi, social: { Portfolio: "https://porfolioluisillo.carrd.co" }, status: "online" },
   { id: 4, name: "Francisco Torres Puche", specialty: "Gamer Developer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Void", social: { Portfolio: "https://sites.google.com/view/dgpp-ftp?usp=sharing" }, status: "offline" },
-  { id: 5, name: "Víctor Hugo Jiménez Meseguer delegado", specialty: "Producer", image: Victor, social: { Portfolio: "https://guns.lol/pollitoamarillo" }, status: "producer" },
+  { id: 5, name: "Víctor Hugo Jiménez Meseguer", specialty: "Producer", image: Victor, social: { Portfolio: "https://guns.lol/pollitoamarillo" }, status: "producer" },
   { id: 6, name: "Rafael Soler Cabrero", specialty: "Gamer Developer / UX Designer", image: Rafa, social: { linkedin: "https://es.linkedin.com/in/rafael-soler-cabrero-136093357" }, status: "online" },
   { id: 7, name: "Eva Góngora Fuentes", specialty: "Art Director / 3D and 2D Generalist", image: Eva, social: { linkedin: "http://www.linkedin.com/in/eva-góngora-fuentes-965b34368" }, status: "online" },
   { id: 8, name: "José Andrés Garrido Gutiérrez", specialty: "Art 3D and 2D", image: JoseAndres, social: { Portfolio: "https://sites.google.com/g.educaand.es/diseogestinpublicajoseandres?usp=sharing" }, status: "online" },
