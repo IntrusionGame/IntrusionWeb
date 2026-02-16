@@ -13,6 +13,7 @@ import Eva from "../Imagenes/Componentes/FotoEva.jpg";
 import JoseAndres from "../Imagenes/Componentes/FotoJoseAndres.jpg";
 import Michel from "../Imagenes/Componentes/FotoMichel.jpg";
 import Oscar from "../Imagenes/Componentes/FotoOscar.jpg";
+import Rafa from "../Imagenes/Componentes/FotoRafa.png";
 
 // Base de datos de personal
 const teamMembers = [
@@ -21,7 +22,7 @@ const teamMembers = [
   { id: 3, name: "Luis Miguel Escuderos Alcaide", specialty: "Art 3D", image: Luismi, social: { Portfolio: "https://porfolioluisillo.carrd.co" }, status: "online" },
   { id: 4, name: "Francisco Torres Puche", specialty: "Gamer Developer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Void", social: { Portfolio: "https://sites.google.com/view/dgpp-ftp?usp=sharing" }, status: "offline" },
   { id: 5, name: "Víctor Hugo Jiménez Meseguer", specialty: "Producer", image: Victor, social: { Portfolio: "https://guns.lol/pollitoamarillo" }, status: "producer" },
-  { id: 6, name: "Rafael Soler Cabrero", specialty: "Gamer Developer / UX Designer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rust", social: { linkedin: "https://es.linkedin.com/in/rafael-soler-cabrero-136093357" }, status: "online" },
+  { id: 6, name: "Rafael Soler Cabrero", specialty: "Gamer Developer / UX Designer", image: Rafa, social: { linkedin: "https://es.linkedin.com/in/rafael-soler-cabrero-136093357" }, status: "online" },
   { id: 7, name: "Eva Góngora Fuentes", specialty: "Art Director / 3D and 2D Generalist", image: Eva, social: { linkedin: "http://www.linkedin.com/in/eva-góngora-fuentes-965b34368" }, status: "online" },
   { id: 8, name: "José Andrés Garrido Gutiérrez", specialty: "Art 3D and 2D", image: JoseAndres, social: { Portfolio: "https://sites.google.com/g.educaand.es/diseogestinpublicajoseandres?usp=sharing" }, status: "online" },
   { id: 9, name: "Óscar González Escabias", specialty: "Gamer Developer / 3D and 2D Art", image: Oscar, social: { Portfolio: "https://sites.google.com/view/profile-oscar/inicio" }, status: "unknown" },
