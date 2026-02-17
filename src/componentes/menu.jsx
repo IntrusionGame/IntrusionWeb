@@ -48,10 +48,30 @@ const Menu = () => {
 
   // Configuración de rutas y navegación
   const menuItems = [
-    { id: 1, label: "INICIAR RITUAL", desc: "Comenzar la partida", path: "/juego" },
-    { id: 2, label: "EXPEDIENTES", desc: "Puzles y archivos", path: "/expedientes" },
-    { id: 3, label: "MANIFIESTO", desc: "Sobre los arquitectos de este vacío", path: "/SobreNosotros" },
-    { id: 4, label: "ABANDONAR", desc: "Huir del juego", path: "/" },
+    {
+      id: 1,
+      label: "INICIAR RITUAL",
+      desc: "Comenzar la partida",
+      path: "/juego",
+    },
+    {
+      id: 2,
+      label: "EXPEDIENTES",
+      desc: "Puzles y archivos",
+      path: "/expedientes",
+    },
+    {
+      id: 3,
+      label: "MANIFIESTO",
+      desc: "Sobre los arquitectos de este vacío",
+      path: "/SobreNosotros",
+    },
+    {
+      id: 4,
+      label: "CANAL DE ENLACE",
+      desc: "Establecer conexión con los arquitectos",
+      path: "/contacto",
+    },
   ];
 
   // Animación de entrada Glitch

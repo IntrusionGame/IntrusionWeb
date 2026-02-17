@@ -4,9 +4,8 @@ import Menu from './componentes/menu.jsx';
 import Footer from './componentes/footer.jsx';
 import SobreNosotros from './Pages/SobreNostros.jsx';
 import Expedientes from './Pages/puzles.jsx';
+import Contacto from './Pages/Contacto.jsx';
 
-// Importa aquí tus futuras páginas
-// import Juego from './paginas/Juego.jsx';
 
 function App() {
   return (
@@ -18,8 +17,9 @@ function App() {
           <Route path="/" element={<Menu />} />
           
           {/* Aquí irás añadiendo las demás páginas del juego */}
-          <Route path="/SobreNosotros" element={<SobreNosotros />} />
+          <Route path="/sobreNosotros" element={<SobreNosotros />} />
           <Route path="/expedientes" element={<Expedientes />} />
+          <Route path="/contacto" element={<Contacto />} />
         </Routes>
 
         <Footer />

@@ -59,7 +59,7 @@ const Footer = () => {
       </div>
 
       {/* SECCIÓN DERECHA: Telemetría y Protocolo */}
-      <div className="flex flex-col items-end text-right">
+      <div className="flex flex-col items-end text-right justify-end">
         <div className="text-[16px] md:text-xl text-zinc-300 font-bold tracking-widest leading-none mb-1">
           {timer}
         </div>
@@ -75,7 +75,7 @@ const Footer = () => {
 
         <div className="text-[8px] md:text-[9px] text-zinc-500 uppercase tracking-[0.2em] max-w-[200px] leading-relaxed">
           PROTOCOLO <span className="text-zinc-300 font-bold italic">INTRUSION</span> ACTIVO. <br />
-          <span className="text-red-800/90 text-[8px] md:text-[10px] font-semibold tracking-[0.1em]">
+          <span className="text-red-800/90 text-[6px] md:text-[10px] font-semibold tracking-[0.1em]">
             ACCESO RESTRINGIDO A NIVEL 4
           </span>
         </div>

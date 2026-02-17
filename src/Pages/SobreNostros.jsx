@@ -13,22 +13,25 @@ import Eva from "../Imagenes/Componentes/FotoEva.jpg";
 import JoseAndres from "../Imagenes/Componentes/FotoJoseAndres.jpg";
 import Michel from "../Imagenes/Componentes/FotoMichel.jpg";
 import Oscar from "../Imagenes/Componentes/FotoOscar.jpg";
-import Rafa from "../Imagenes/Componentes/FotoRafa.png";
+import Rafa from "../Imagenes/Componentes/Foto_Rafael.jpg";
+import Adrian from "../Imagenes/Componentes/FotoAdrian.jpg";
+import JuanJose from "../Imagenes/Componentes/FotoJuanJose.jpg";
+import Francisco from "../Imagenes/Componentes/FotoFrancisco.jpg";
 
 // Base de datos de personal
 const teamMembers = [
   { id: 1, name: "Javier Soriano Moreno", specialty: "Gamer Developer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anna", social: { Portfolio: "https://sites.google.com/view/sorieme/inicio" }, status: "online" },
   { id: 2, name: "David Jiménez Villena", specialty: "Web Developer / Gamer Developer", image: David, social: { Portfolio: "https://djsekai34.github.io/DJVPortFolio/", linkedin: "https://www.linkedin.com/in/david-jimenez-villena/" }, status: "online" },
   { id: 3, name: "Luis Miguel Escuderos Alcaide", specialty: "Art 3D", image: Luismi, social: { Portfolio: "https://porfolioluisillo.carrd.co" }, status: "online" },
-  { id: 4, name: "Francisco Torres Puche", specialty: "Gamer Developer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Void", social: { Portfolio: "https://sites.google.com/view/dgpp-ftp?usp=sharing" }, status: "offline" },
+  { id: 4, name: "Francisco Torres Puche", specialty: "Gamer Developer", image: Francisco, social: { Portfolio: "https://sites.google.com/view/dgpp-ftp?usp=sharing" }, status: "offline" },
   { id: 5, name: "Víctor Hugo Jiménez Meseguer", specialty: "Producer", image: Victor, social: { Portfolio: "https://guns.lol/pollitoamarillo" }, status: "producer" },
   { id: 6, name: "Rafael Soler Cabrero", specialty: "Gamer Developer / UX Designer", image: Rafa, social: { linkedin: "https://es.linkedin.com/in/rafael-soler-cabrero-136093357" }, status: "online" },
   { id: 7, name: "Eva Góngora Fuentes", specialty: "Art Director / 3D and 2D Generalist", image: Eva, social: { linkedin: "http://www.linkedin.com/in/eva-góngora-fuentes-965b34368" }, status: "online" },
   { id: 8, name: "José Andrés Garrido Gutiérrez", specialty: "Art 3D and 2D", image: JoseAndres, social: { Portfolio: "https://sites.google.com/g.educaand.es/diseogestinpublicajoseandres?usp=sharing" }, status: "online" },
   { id: 9, name: "Óscar González Escabias", specialty: "Gamer Developer / 3D and 2D Art", image: Oscar, social: { Portfolio: "https://sites.google.com/view/profile-oscar/inicio" }, status: "unknown" },
   { id: 10, name: "Michel Mendoza", specialty: "Gamer Developer", image: Michel, social: { Portfolio: "https://arycer.me/" }, status: "online" },
-  { id: 11, name: "Adrián Moreno Aibar", specialty: "Gamer Developer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Angel", social: { Portfolio: "https://sites.google.com/g.educaand.es/pericogames/inicio" }, status: "unknown" },
-  { id: 12, name: "Juan José Santiago Vílchez", specialty: "Gamer Developer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alvaro", social: { Portfolio: "https://sites.google.com/g.educaand.es/milusistudio/inicio" }, status: "unknown" },
+  { id: 11, name: "Adrián Moreno Aibar", specialty: "Gamer Developer", image: Adrian, social: { Portfolio: "https://sites.google.com/g.educaand.es/pericogames/inicio" }, status: "unknown" },
+  { id: 12, name: "Juan José Santiago Vílchez", specialty: "Gamer Developer", image: JuanJose, social: { Portfolio: "https://sites.google.com/g.educaand.es/milusistudio/inicio" }, status: "unknown" },
 
 ];
 
