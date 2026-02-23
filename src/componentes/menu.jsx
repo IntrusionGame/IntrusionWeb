@@ -72,6 +72,12 @@ const Menu = () => {
       desc: "Establecer conexión con los arquitectos",
       path: "/contacto",
     },
+    {
+   id: 5,
+   label: "BITÁCORA DE FALLOS",
+   desc: "Registros recuperados del vacío",
+   path: "/blog",
+ },
   ];
 
   // Animación de entrada Glitch

@@ -1,0 +1,25 @@
+// src/data/incidentesData.js
+export const incidente_09 = {
+  titulo: "REGISTRO_REPRODUCIDO_09.dat",
+  fecha: "2026-03-22 // 03:34 AM",
+  clasificacion: "NIVEL_OMEGA-ROJO",
+  contenido: [
+    {
+      tipo: "parrafo",
+      texto: "La anomalía se manifestó en el Sector Delta-7. Los sensores de realidad detectaron una caída crítica en la coherencia espacio-temporal. No hubo advertencia previa. Solo el silencio absoluto seguido de un pulso electromagnético que borró el 40% de los registros de la base."
+    },
+    {
+      tipo: "imagen",
+      src: "https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=2037&auto=format&fit=crop", 
+      caption: "CAPTURA_SISTEMA: Manifestación inicial en el Sector Delta-7. La distorsión es física."
+    },
+    {
+      tipo: "codigo",
+      texto: "ERROR_CRÍTICO: INTEGRIDAD_DIMENSIONAL_0%\nGRAVEDAD_LOCAL: INESTABLE\nESTADO_SUJETO: DESCONOCIDO\n\nCONTINUAR_BAJO_PROPIO_RIESGO..."
+    },
+    {
+      tipo: "parrafo",
+      texto: "El equipo de reconocimiento no regresó. Las últimas señales de audio contienen frecuencias que el oído humano no debería procesar. Hemos sellado el acceso al archivo original, lo que ves aquí es solo un eco de lo que realmente sucedió en la oscuridad."
+    }
+  ]
+};

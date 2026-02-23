@@ -5,7 +5,8 @@ import Footer from './componentes/footer.jsx';
 import SobreNosotros from './Pages/SobreNostros.jsx';
 import Expedientes from './Pages/puzles.jsx';
 import Contacto from './Pages/Contacto.jsx';
-
+import Blog from './Pages/Blog.jsx';
+import Blog26 from './Pages/Blogs/23022026_Blog.jsx';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/sobreNosotros" element={<SobreNosotros />} />
           <Route path="/expedientes" element={<Expedientes />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/26022026" element={<Blog26 />} />
         </Routes>
 
         <Footer />
