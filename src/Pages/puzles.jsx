@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaChevronLeft, FaLock, FaSkull, FaEye, FaMicrochip } from "react-icons/fa";
 
@@ -55,7 +55,7 @@ const Expedientes = () => {
   ];
 
   return (
-    <div className="fixed inset-0 w-full h-full bg-black overflow-y-auto custom-scrollbar font-elite text-zinc-400 select-none">
+    <div className="fixed inset-0 w-full h-full bg-black overflow-y-auto custom-scrollbar font-elite text-zinc-400">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Special+Elite&display=swap');
@@ -89,24 +89,24 @@ const Expedientes = () => {
       </style>
 
       <Link to="/">
-        <motion.div 
+        <Motion.div 
           whileHover={{ x: -5 }}
           className="fixed top-6 left-6 z-[60] flex items-center gap-2 text-zinc-600 hover:text-red-600 transition-colors cursor-pointer group"
         >
           <FaChevronLeft className="group-hover:animate-pulse" />
           <span className="text-xs tracking-widest uppercase">ABORTAR_SESIÓN</span>
-        </motion.div>
+        </Motion.div>
       </Link>
 
       <div className="max-w-5xl mx-auto pt-24 pb-20 px-6">
         <header className="border-b border-red-900/30 pb-8 mb-16 relative">
-          <motion.h1 
+          <Motion.h1 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-4xl md:text-6xl font-glitch text-red-700 uppercase mb-4 tracking-tighter drop-shadow-[0_0_8px_rgba(185,28,28,0.4)]"
           >
             Expedientes de Puzles
-          </motion.h1>
+          </Motion.h1>
           <div className="flex flex-wrap gap-4 text-[10px] tracking-[0.2em] text-zinc-500 uppercase">
             <span className="flex items-center gap-2"><FaMicrochip className="animate-pulse" /> ID_PROYECTO: INTRUSION</span>
             <span className="flex items-center gap-2"><FaEye /> ESTADO: CLASIFICADO</span>
@@ -114,14 +114,14 @@ const Expedientes = () => {
           </div>
         </header>
 
-        <motion.section 
+        <Motion.section 
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="space-y-32"
         >
           {puzzles.map((p, index) => (
-            <motion.div 
+            <Motion.div 
               key={index}
               variants={puzzleVariants}
               className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group"
@@ -165,7 +165,7 @@ const Expedientes = () => {
               </div>
 
               <div className="relative w-full overflow-hidden">
-                <motion.div 
+                <Motion.div 
                   whileHover={{ scale: 1.05 }}
                   className="absolute inset-0 bg-red-900/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10" 
                 />
@@ -181,9 +181,9 @@ const Expedientes = () => {
                   DAT_STREAM: STAGE_{index + 1}_LIVE
                 </div>
               </div>
-            </motion.div>
+            </Motion.div>
           ))}
-        </motion.section>
+        </Motion.section>
       </div>
 
       <div className="pointer-events-none fixed inset-0 z-10 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] contrast-150" />

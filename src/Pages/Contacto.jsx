@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
@@ -53,7 +53,7 @@ const Contacto = () => {
   };
 
   return (
-    <div className="fixed inset-0 w-full h-full bg-black overflow-y-auto custom-scrollbar font-elite text-zinc-400 select-none">
+    <div className="fixed inset-0 w-full h-full bg-black overflow-y-auto custom-scrollbar font-elite text-zinc-400">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Special+Elite&display=swap');
@@ -85,24 +85,24 @@ const Contacto = () => {
 
       {/* NAVEGACIÓN */}
       <Link to="/">
-        <motion.div 
+        <Motion.div 
           whileHover={{ x: -5 }}
           className="fixed top-6 left-6 z-[60] flex items-center gap-2 text-zinc-600 hover:text-red-600 transition-colors cursor-pointer group font-elite"
         >
           <FaChevronLeft className="group-hover:animate-pulse" />
           <span className="text-xs tracking-widest uppercase italic">INTERRUMPIR_ENLACE</span>
-        </motion.div>
+        </Motion.div>
       </Link>
 
       <div className="max-w-6xl mx-auto pt-24 pb-20 px-6">
         <header className="border-b border-red-900/30 pb-8 mb-16 relative">
-          <motion.h1 
+          <Motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-glitch text-red-700 uppercase mb-4 tracking-tighter drop-shadow-[0_0_8px_rgba(185,28,28,0.4)]"
           >
             Canal de Enlace
-          </motion.h1>
+          </Motion.h1>
           <p className="text-[10px] tracking-[0.3em] text-zinc-500 uppercase animate-pulse font-elite">
             Estableciendo conexión con los arquitectos del vacío...
           </p>
@@ -111,7 +111,7 @@ const Contacto = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 font-elite">
           
           {/* SECCIÓN: REDES EXTERNAS */}
-          <motion.section 
+          <Motion.section 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
@@ -146,10 +146,10 @@ const Contacto = () => {
                 </a>
               ))}
             </div>
-          </motion.section>
+          </Motion.section>
 
           {/* SECCIÓN: TRANSMISOR DE DATOS */}
-          <motion.section 
+          <Motion.section 
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
@@ -221,18 +221,18 @@ const Contacto = () => {
 
               <AnimatePresence>
                 {status && (
-                  <motion.p 
+                  <Motion.p 
                     initial={{ opacity: 0, height: 0 }} 
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     className="text-[10px] text-center text-red-600 font-bold tracking-widest uppercase status-flicker border border-red-900/20 py-2 font-elite"
                   >
                     {status}
-                  </motion.p>
+                  </Motion.p>
                 )}
               </AnimatePresence>
             </form>
-          </motion.section>
+          </Motion.section>
         </div>
       </div>
 

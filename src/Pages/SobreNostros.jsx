@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   FaLinkedin,
@@ -87,19 +87,19 @@ const SobreNosotros = () => {
 
       {/* Control de Navegación Superior */}
       <Link to="/">
-        <motion.div
+        <Motion.div
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           className="fixed top-6 left-6 z-[60] flex items-center gap-2 text-zinc-500 hover:text-red-600 transition-colors font-elite text-xs cursor-pointer group"
         >
           <FaChevronLeft className="group-hover:-translate-x-1 transition-transform" />
           <span>REGRESAR AL SISTEMA</span>
-        </motion.div>
+        </Motion.div>
       </Link>
 
       <div className="w-full flex flex-col items-center pt-20 pb-32">
         {/* Cabecera del Nexo */}
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           className="text-center mb-16 px-4"
@@ -110,11 +110,11 @@ const SobreNosotros = () => {
           <p className="font-elite text-zinc-600 text-[10px] tracking-[0.4em] mt-4 uppercase">
             — Personal de Desarrollo Identificado —
           </p>
-        </motion.div>
+        </Motion.div>
 
         {/* Grilla de Perfiles */}
         <div className="w-full max-w-[1100px] px-6">
-          <motion.div
+          <Motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -123,7 +123,7 @@ const SobreNosotros = () => {
             {teamMembers.map((member, index) => {
               const isCenter = index === 4;
               return (
-                <motion.div
+                <Motion.div
                   key={member.id}
                   variants={itemVariants}
                   whileHover={{ scale: 1.02, y: -5 }}
@@ -169,7 +169,7 @@ const SobreNosotros = () => {
                     {Object.entries(member.social).map(([platform, url]) => {
                       const Icon = socialIcons[platform];
                       return Icon ? (
-                        <motion.a
+                        <Motion.a
                           key={platform}
                           href={url}
                           target="_blank"
@@ -178,7 +178,7 @@ const SobreNosotros = () => {
                           className="text-zinc-600 transition-colors"
                         >
                           <Icon size={18} />
-                        </motion.a>
+                        </Motion.a>
                       ) : null;
                     })}
                   </div>
@@ -187,10 +187,10 @@ const SobreNosotros = () => {
                   <span className="absolute top-2 right-3 text-[8px] text-zinc-800 font-mono italic">
                     REF_{member.id}00X
                   </span>
-                </motion.div>
+                </Motion.div>
               );
             })}
-          </motion.div>
+          </Motion.div>
         </div>
       </div>
     </div>

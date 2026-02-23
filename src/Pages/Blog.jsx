@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaChevronLeft, FaSkull, FaLock, FaTerminal, FaEye } from "react-icons/fa";
 
 const Bitacora = () => {
   // Simulación de entradas del blog (enlaces)
   const registros = [
-   { id: "01", titulo: "PROTOCOLO_12032026.log", fecha: "12/03/26", link: "/blog/26022026", riesgo: "CRÍTICO" },
+   { id: "01", titulo: "PROTOCOLO_23022026.log", fecha: "23/02/26", link: "/blog/23Febero26", riesgo: "CRÍTICO" },
   { id: "02", titulo: "PROTOCOLO_15032026.log", fecha: "15/03/26", link: "/blog/15032026", riesgo: "ALTO" },
   { id: "03", titulo: "PROTOCOLO_18032026.log", fecha: "18/03/26", link: "/blog/18032026", riesgo: "DESCONOCIDO" },
   { id: "04", titulo: "PROTOCOLO_20032026.log", fecha: "20/03/26", link: "/blog/20032026", riesgo: "BAJO" },
@@ -38,24 +38,24 @@ const Bitacora = () => {
       
       {/* NAVEGACIÓN */}
       <Link to="/">
-        <motion.div 
+        <Motion.div 
           whileHover={{ x: -5 }}
           className="fixed top-6 left-6 z-[60] flex items-center gap-2 text-zinc-700 hover:text-red-700 transition-colors cursor-pointer group font-elite"
         >
           <FaChevronLeft className="group-hover:animate-pulse" />
           <span className="text-xs tracking-widest uppercase italic">SALIR_DEL_SISTEMA</span>
-        </motion.div>
+        </Motion.div>
       </Link>
 
       <div className="max-w-4xl mx-auto pt-24 pb-20 px-6">
         <header className="border-b border-zinc-900 pb-8 mb-12">
-          <motion.h1 
+          <Motion.h1 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-4xl font-glitch text-zinc-200 uppercase tracking-tighter"
           >
             Bitácora de Incidencias
-          </motion.h1>
+          </Motion.h1>
           <div className="flex items-center gap-4 mt-2">
             <span className="text-[10px] text-red-900 animate-pulse uppercase tracking-[0.3em]">Acceso No Autorizado Detectado</span>
             <div className="h-[1px] flex-grow bg-red-900/20" />
@@ -65,7 +65,7 @@ const Bitacora = () => {
         {/* LISTADO DE ENLACES (BLOG) */}
         <section className="space-y-4">
           {registros.map((reg, index) => (
-            <motion.div
+            <Motion.div
               key={reg.id}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -89,19 +89,19 @@ const Bitacora = () => {
                 </div>
                 
                 <div className="flex items-center gap-4">
-                  <motion.div
+                  <Motion.div
                     whileHover={{ rotate: 180 }}
                     className="text-zinc-800 group-hover:text-red-600 transition-colors"
                   >
                     <FaEye size={18} />
-                  </motion.div>
+                  </Motion.div>
                   <FaTerminal className="text-zinc-900" />
                 </div>
 
                 {/* EFECTO DE GLITCH AL PASAR EL RATÓN */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 pointer-events-none bg-red-600 transition-opacity" />
               </Link>
-            </motion.div>
+            </Motion.div>
           ))}
         </section>
 
