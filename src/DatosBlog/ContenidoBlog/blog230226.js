@@ -1,14 +1,13 @@
-import Logo from "../Imagenes/Blog/Logo.jpg";
-import Casa from "../Imagenes/Blog/Casa.jpg";
-import Menu from "../Imagenes/Blog/Menu.jpg";
-import Github1 from "../Imagenes/Blog/ProyectoGithub.png";
-import Github2 from "../Imagenes/Blog/RamasGithub.png";
+import Logo from "../../Imagenes/Blog/Logo.jpg";
+import Casa from "../../Imagenes/Blog/Casa.jpg";
+import Menu from "../../Imagenes/Blog/Menu.jpg";
+import Github1 from "../../Imagenes/Blog/ProyectoGithub.png";
+import Github2 from "../../Imagenes/Blog/RamasGithub.png";
 
 export const incidentesData = {
-  26022026: {
-    // Este ID debe coincidir con el que pases por el Link de la lista
-    titulo: "PROTOCOLO_26022026.log",
-    fecha: "2026-02-26 // 03:34 AM",
+  230226: {
+    titulo: "PROTOCOLO_23022026.log",
+    fecha: "2026-02-23 // 03:34 AM",
     clasificacion: "NIVEL_OMEGA-ROJO",
     contenido: [
       {

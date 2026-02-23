@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import { FaChevronLeft, FaSkull, FaLock, FaTerminal, FaEye } from "react-icons/fa";
 
 const Bitacora = () => {
-  // Simulación de entradas del blog (enlaces)
+  /**
+   * PUNTO CRÍTICO: Base de Datos de Registros
+   * Los IDs deben ser puramente numéricos para que coincidan con 
+   * las keys del archivo de datos).
+   */
   const registros = [
-   { id: "01", titulo: "PROTOCOLO_23022026.log", fecha: "23/02/26", link: "/blog/23Febero26", riesgo: "CRÍTICO" },
-  { id: "02", titulo: "PROTOCOLO_15032026.log", fecha: "15/03/26", link: "/blog/15032026", riesgo: "ALTO" },
-  { id: "03", titulo: "PROTOCOLO_18032026.log", fecha: "18/03/26", link: "/blog/18032026", riesgo: "DESCONOCIDO" },
-  { id: "04", titulo: "PROTOCOLO_20032026.log", fecha: "20/03/26", link: "/blog/20032026", riesgo: "BAJO" },
+    { id: "230226", titulo: "PROTOCOLO_23022026.log", fecha: "23/02/26", riesgo: "CRÍTICO" },
+    { id: "150326", titulo: "PROTOCOLO_15032026.log", fecha: "15/03/26", riesgo: "ALTO" },
+    { id: "180326", titulo: "PROTOCOLO_18032026.log", fecha: "18/03/26", riesgo: "DESCONOCIDO" },
+    { id: "200326", titulo: "PROTOCOLO_20032026.log", fecha: "20/03/26", riesgo: "BAJO" },
   ];
 
   return (
@@ -18,34 +22,36 @@ const Bitacora = () => {
           @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Special+Elite&display=swap');
           .font-glitch { font-family: 'Rubik Glitch', system-ui; }
           .font-elite { font-family: 'Special Elite', serif !important; }
-          
+
+          .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+          .custom-scrollbar::-webkit-scrollbar-track { background: #000; }
+          .custom-scrollbar::-webkit-scrollbar-thumb { background: #450a0a; border: 1px solid #000; }
+          .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #7f1d1d; }
+          .custom-scrollbar { scrollbar-width: thin; scrollbar-color: #450a0a #000; }
+
           .scanline {
-            width: 100%;
-            height: 2px;
-            background: rgba(153, 27, 27, 0.1);
-            position: absolute;
+            width: 100%; height: 2px; background: rgba(153, 27, 27, 0.1);
+            position: fixed; top: 0; left: 0; pointer-events: none; z-index: 50;
             animation: scanline 8s linear infinite;
           }
-          @keyframes scanline {
-            0% { top: 0; }
-            100% { top: 100%; }
-          }
+          @keyframes scanline { 0% { top: 0; } 100% { top: 100vh; } }
         `}
       </style>
 
-      {/* EFECTO DE PANTALLA VIEJA */}
-      <div className="scanline pointer-events-none z-50" />
+      <div className="scanline" />
       
-      {/* NAVEGACIÓN */}
-      <Link to="/">
-        <Motion.div 
-          whileHover={{ x: -5 }}
-          className="fixed top-6 left-6 z-[60] flex items-center gap-2 text-zinc-700 hover:text-red-700 transition-colors cursor-pointer group font-elite"
-        >
-          <FaChevronLeft className="group-hover:animate-pulse" />
-          <span className="text-xs tracking-widest uppercase italic">SALIR_DEL_SISTEMA</span>
-        </Motion.div>
-      </Link>
+      {/* BARRA DE NAVEGACIÓN SUPERIOR  */}
+      <div className="fixed top-6 left-6 z-[60] flex items-center font-elite">
+        <Link to="/">
+          <Motion.div 
+            whileHover={{ x: -2 }}
+            className="flex items-center gap-2 text-zinc-700 hover:text-red-700 transition-colors cursor-pointer group"
+          >
+            <FaChevronLeft className="group-hover:animate-pulse text-[10px]" />
+            <span className="text-[10px] tracking-widest uppercase italic">SALIR_DEL_SISTEMA</span>
+          </Motion.div>
+        </Link>
+      </div>
 
       <div className="max-w-4xl mx-auto pt-24 pb-20 px-6">
         <header className="border-b border-zinc-900 pb-8 mb-12">
@@ -62,7 +68,10 @@ const Bitacora = () => {
           </div>
         </header>
 
-        {/* LISTADO DE ENLACES (BLOG) */}
+        {/**
+         * LISTADO DE REGISTROS
+         * Renderizado dinámico de los protocolos disponibles.
+         */}
         <section className="space-y-4">
           {registros.map((reg, index) => (
             <Motion.div
@@ -71,20 +80,27 @@ const Bitacora = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
             >
+              {/**
+               * PUNTO CRÍTICO: Construcción de URL Estética
+               * Se concatena la palabra 'protocolo' con el ID para generar 
+               * una URL tipo /blog/protocolo230226 que el Router pueda capturar.
+               */}
               <Link 
-                to={reg.link}
-                className="group relative flex items-center justify-between p-6 border border-zinc-900 bg-zinc-950/20 hover:border-red-900/40 hover:bg-red-950/5 transition-all"
+                to={`/blog/protocolo${reg.id}`} 
+                className="group relative flex items-center justify-between p-6 border border-zinc-900 bg-zinc-950/20 hover:border-red-900/40 transition-all duration-500 overflow-hidden"
               >
                 <div className="flex items-center gap-6">
                   <span className="text-xs text-zinc-800 group-hover:text-red-900 font-mono transition-colors">
-                    [{reg.id}]
+                    [{index + 1 < 10 ? `0${index + 1}` : index + 1}]
                   </span>
                   <div>
                     <h2 className="text-lg text-zinc-400 group-hover:text-zinc-100 transition-colors uppercase tracking-wider flex items-center gap-3">
                       {reg.titulo}
                       <FaLock className="text-[10px] text-zinc-800 group-hover:text-red-900 transition-colors" />
                     </h2>
-                    <span className="text-[9px] text-zinc-700 uppercase tracking-widest">{reg.fecha} // RIESGO: {reg.riesgo}</span>
+                    <span className="text-[9px] text-zinc-700 uppercase tracking-widest">
+                      {reg.fecha} // RIESGO: <span className={reg.riesgo === "CRÍTICO" ? "text-red-700" : ""}>{reg.riesgo}</span>
+                    </span>
                   </div>
                 </div>
                 
@@ -98,14 +114,13 @@ const Bitacora = () => {
                   <FaTerminal className="text-zinc-900" />
                 </div>
 
-                {/* EFECTO DE GLITCH AL PASAR EL RATÓN */}
+                {/* EFECTO DE RESPLANDOR AL PASAR EL MOUSE */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-10 pointer-events-none bg-red-600 transition-opacity" />
               </Link>
             </Motion.div>
           ))}
         </section>
 
-        {/* PIE DE PÁGINA DE SEGURIDAD */}
         <footer className="mt-20 pt-8 border-t border-zinc-900 flex flex-col items-center gap-4">
           <FaSkull className="text-zinc-900 text-3xl" />
           <p className="text-[9px] text-zinc-700 uppercase tracking-[0.5em] text-center">
@@ -114,7 +129,6 @@ const Bitacora = () => {
         </footer>
       </div>
 
-      {/* FONDO DE GRANO */}
       <div className="pointer-events-none fixed inset-0 z-[-1] opacity-[0.04] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
     </div>
   );
