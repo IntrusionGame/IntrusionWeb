@@ -2,7 +2,7 @@ import Blockout2 from "../../Imagenes/Blog/Dia_24_de_Febrero/BlockoutCasa.jpg";
 import Blockout3 from "../../Imagenes/Blog/Dia_24_de_Febrero/BlockoutCasa2.jpg";
 import Mecanica from "../../Imagenes/Blog/Dia_24_de_Febrero/MecanicaFrancisco.png";
 import Enemigo from "../../Imagenes/Blog/Dia_24_de_Febrero/Enemigo.png";
-import Casa1 from "../../Imagenes/Blog/Dia_24_de_Febrero/imagenCasa1.png";
+import Casa1 from "../../Imagenes/Blog/Dia_24_de_Febrero/ImagenCasa1.png";
 import Casa2 from "../../Imagenes/Blog/Dia_24_de_Febrero/ImagenCasa2.png";
 import Player from "../../Imagenes/Blog/Dia_24_de_Febrero/Player.png";
 import Key from "../../Imagenes/Blog/Dia_24_de_Febrero/Key.png";
