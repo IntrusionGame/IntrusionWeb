@@ -90,8 +90,7 @@ const TranscripcionIncidente = () => {
   }
 
   return (
-    <div key={id} className="fixed inset-0 w-full h-full bg-black overflow-y-auto custom-scrollbar font-elite text-zinc-400">
-      <style>
+<div key={id} className="fixed inset-0 w-full h-full bg-black overflow-y-auto custom-scrollbar font-elite text-zinc-400 pb-32">      <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Special+Elite&display=swap');
           .font-glitch { font-family: 'Rubik Glitch', system-ui; }
@@ -115,25 +114,31 @@ const TranscripcionIncidente = () => {
       <div className="scanline" />
       
       {/* BARRA DE NAVEGACIÓN SUPERIOR */}
+      {/* BARRA DE NAVEGACIÓN SUPERIOR IZQUIERDA */}
       <div className="fixed top-6 left-6 z-[60] flex items-center gap-4 font-elite">
+        
+        {/* BOTÓN 1: CERRAR ARCHIVO */}
         <Link to="/blog">
           <Motion.div 
-            whileHover={{ x: -2 }} 
+            whileHover={{ x: -5 }} // Volvemos al desplazamiento original
             className="flex items-center gap-2 text-zinc-700 hover:text-red-700 transition-colors cursor-pointer group"
           >
-            <FaChevronLeft className="group-hover:animate-pulse text-[10px]" />
-            <span className="text-[10px] tracking-widest uppercase italic">CERRAR_ARCHIVO</span>
+            <FaChevronLeft className="group-hover:animate-pulse text-xs" />
+            <span className="text-xs tracking-widest uppercase italic">CERRAR_ARCHIVO</span>
           </Motion.div>
         </Link>
 
-        <span className="text-zinc-900 select-none">|</span>
+        {/* SEPARADOR VISUAL */}
+        <span className="text-zinc-900 select-none opacity-50">|</span>
 
+        {/* BOTÓN 2: MENÚ PRINCIPAL */}
         <Link to="/">
           <Motion.div 
-            whileHover={{ x: -2 }} 
+            whileHover={{ x: -5 }} 
             className="flex items-center gap-2 text-zinc-700 hover:text-red-700 transition-colors cursor-pointer group"
           >
-            <span className="text-[10px] tracking-widest uppercase italic">MENÚ_PRINCIPAL</span>
+            {/* Opcional: puedes añadir el icono aquí también si quieres simetría total */}
+            <span className="text-xs tracking-widest uppercase italic">SISTEMA_RAÍZ</span>
           </Motion.div>
         </Link>
       </div>

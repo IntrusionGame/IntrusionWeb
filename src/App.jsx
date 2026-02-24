@@ -7,6 +7,7 @@ import Expedientes from "./Pages/puzles.jsx";
 import Contacto from "./Pages/Contacto.jsx";
 import Blog from "./Pages/Blog.jsx";
 import Blog26 from "./Pages/CotenidoBlog.jsx";
+import Juego from "./Pages/Juego.jsx";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         {/* LAS RUTAS: Aquí cambia el contenido central */}
         <Routes>
           <Route path="/" element={<Menu />} />
-          {/* Aquí irás añadiendo las demás páginas del juego */}
+          <Route path="/juego" element={<Juego />} />
           <Route path="/sobreNosotros" element={<SobreNosotros />} />
           <Route path="/expedientes" element={<Expedientes />} />
           <Route path="/contacto" element={<Contacto />} />

@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import LogoIntrusion from "../Imagenes/LogoIntrusion.png";
 
 const Menu = () => {
   const [activeItem, setActiveItem] = useState(null);
@@ -114,14 +115,18 @@ const Menu = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square bg-red-900/10 blur-[80px] md:blur-[120px] rounded-full" />
 
       {/* Título Principal */}
-      <motion.h1
+      <motion.div
         variants={entradaTerror}
         initial="hidden"
         animate="visible"
-        className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-bold text-red-700 tracking-[0.05em] mb-8 md:mb-12 drop-shadow-[0_0_20px_rgba(185,28,28,0.7)] z-10 whitespace-nowrap font-glitch"
+        className="mb-8 md:mb-12 z-10"
       >
-        INTRUSION
-      </motion.h1>
+        <img 
+          src={LogoIntrusion} 
+          alt="INTRUSION LOGO" 
+          className="w-auto h-[60px] sm:h-[80px] md:h-[100px] lg:h-[140px] object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"
+        />
+      </motion.div>
 
       {/* Navegación Interactiva */}
       <nav className="space-y-4 md:space-y-6 relative z-10 w-full md:w-auto font-elite">

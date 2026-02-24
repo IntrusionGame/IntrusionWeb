@@ -21,7 +21,7 @@ import Francisco from "../Imagenes/Componentes/FotoFrancisco.jpg";
 // Base de datos de personal
 const teamMembers = [
   { id: 1, name: "Javier Soriano Moreno", specialty: "Gamer Developer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anna", social: { Portfolio: "https://sites.google.com/view/sorieme/inicio" }, status: "online" },
-  { id: 2, name: "David Jiménez Villena", specialty: "Web Developer / Gamer Developer", image: David, social: { Portfolio: "https://djsekai34.github.io/DJVPortFolio/", linkedin: "https://www.linkedin.com/in/david-jimenez-villena/" }, status: "online" },
+  { id: 2, name: "David Jiménez Villena", specialty: "Web Developer / Gamer Developer", image: David, social: { Portfolio: "https://djvportfolio.vercel.app", linkedin: "https://www.linkedin.com/in/david-jimenez-villena/" }, status: "online" },
   { id: 3, name: "Luis Miguel Escuderos Alcaide", specialty: "Art 3D", image: Luismi, social: { Portfolio: "https://porfolioluisillo.carrd.co" }, status: "online" },
   { id: 4, name: "Francisco Torres Puche", specialty: "Gamer Developer", image: Francisco, social: { Portfolio: "https://sites.google.com/view/dgpp-ftp?usp=sharing" }, status: "offline" },
   { id: 5, name: "Víctor Hugo Jiménez Meseguer", specialty: "Producer", image: Victor, social: { Portfolio: "https://guns.lol/pollitoamarillo" }, status: "producer" },

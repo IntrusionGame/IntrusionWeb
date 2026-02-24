@@ -1,19 +1,20 @@
-import { motion as Motion } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion"; // Añadido AnimatePresence para transiciones suaves
 import { Link } from "react-router-dom";
-import { FaChevronLeft, FaSkull, FaLock, FaTerminal, FaEye } from "react-icons/fa";
+import { useState } from "react"; // Necesario para la paginación
+import { FaChevronLeft, FaSkull, FaLock, FaTerminal, FaEye, FaChevronRight } from "react-icons/fa";
+
+// IMPORTACIÓN OPTIMIZADA: Traemos los datos de fuera
+import { DatosBlog } from "../DatosBlog/indiceBlog.js"; 
 
 const Bitacora = () => {
-  /**
-   * PUNTO CRÍTICO: Base de Datos de Registros
-   * Los IDs deben ser puramente numéricos para que coincidan con 
-   * las keys del archivo de datos).
-   */
-  const registros = [
-    { id: "230226", titulo: "PROTOCOLO_23022026.log", fecha: "23/02/26", riesgo: "CRÍTICO" },
-    { id: "150326", titulo: "PROTOCOLO_15032026.log", fecha: "15/03/26", riesgo: "ALTO" },
-    { id: "180326", titulo: "PROTOCOLO_18032026.log", fecha: "18/03/26", riesgo: "DESCONOCIDO" },
-    { id: "200326", titulo: "PROTOCOLO_20032026.log", fecha: "20/03/26", riesgo: "BAJO" },
-  ];
+  // LÓGICA DE PAGINACIÓN (Sin tocar el visual)
+  const [paginaActual, setPaginaActual] = useState(1);
+  const registrosPorPagina = 4;
+
+  const totalPaginas = Math.ceil(DatosBlog.length / registrosPorPagina);
+  const indiceUltimo = paginaActual * registrosPorPagina;
+  const indicePrimero = indiceUltimo - registrosPorPagina;
+  const registrosActuales = DatosBlog.slice(indicePrimero, indiceUltimo);
 
   return (
     <div className="fixed inset-0 w-full h-full bg-black overflow-y-auto custom-scrollbar font-elite text-zinc-500 select-none">
@@ -40,7 +41,6 @@ const Bitacora = () => {
 
       <div className="scanline" />
       
-      {/* BARRA DE NAVEGACIÓN SUPERIOR  */}
       <div className="fixed top-6 left-6 z-[60] flex items-center font-elite">
         <Link to="/">
           <Motion.div 
@@ -58,68 +58,98 @@ const Bitacora = () => {
           <Motion.h1 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-4xl font-glitch text-zinc-200 uppercase tracking-tighter"
+            className="text-4xl font-glitch text-red-700 uppercase tracking-tighter"
           >
             Bitácora de Incidencias
           </Motion.h1>
           <div className="flex items-center gap-4 mt-2">
-            <span className="text-[10px] text-red-900 animate-pulse uppercase tracking-[0.3em]">Acceso No Autorizado Detectado</span>
+            <span className="text-[10px] animate-pulse uppercase tracking-[0.3em]">
+              Acceso No Autorizado Detectado // Pág_{paginaActual}_de_{totalPaginas}
+            </span>
             <div className="h-[1px] flex-grow bg-red-900/20" />
           </div>
         </header>
 
-        {/**
-         * LISTADO DE REGISTROS
-         * Renderizado dinámico de los protocolos disponibles.
-         */}
-        <section className="space-y-4">
-          {registros.map((reg, index) => (
+        <section className="space-y-4 min-h-[460px]">
+          <AnimatePresence mode="wait">
             <Motion.div
-              key={reg.id}
-              initial={{ opacity: 0, x: -20 }}
+              key={paginaActual}
+              initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
+              exit={{ opacity: 0, x: -20 }}
+              className="space-y-4"
             >
-              {/**
-               * PUNTO CRÍTICO: Construcción de URL Estética
-               * Se concatena la palabra 'protocolo' con el ID para generar 
-               * una URL tipo /blog/protocolo230226 que el Router pueda capturar.
-               */}
-              <Link 
-                to={`/blog/protocolo${reg.id}`} 
-                className="group relative flex items-center justify-between p-6 border border-zinc-900 bg-zinc-950/20 hover:border-red-900/40 transition-all duration-500 overflow-hidden"
-              >
-                <div className="flex items-center gap-6">
-                  <span className="text-xs text-zinc-800 group-hover:text-red-900 font-mono transition-colors">
-                    [{index + 1 < 10 ? `0${index + 1}` : index + 1}]
-                  </span>
-                  <div>
-                    <h2 className="text-lg text-zinc-400 group-hover:text-zinc-100 transition-colors uppercase tracking-wider flex items-center gap-3">
-                      {reg.titulo}
-                      <FaLock className="text-[10px] text-zinc-800 group-hover:text-red-900 transition-colors" />
-                    </h2>
-                    <span className="text-[9px] text-zinc-700 uppercase tracking-widest">
-                      {reg.fecha} // RIESGO: <span className={reg.riesgo === "CRÍTICO" ? "text-red-700" : ""}>{reg.riesgo}</span>
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <Motion.div
-                    whileHover={{ rotate: 180 }}
-                    className="text-zinc-800 group-hover:text-red-600 transition-colors"
+              {registrosActuales.map((reg, index) => (
+                <Motion.div
+                  key={reg.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link 
+                    to={`/blog/protocolo${reg.id}`} 
+                    className="group relative flex items-center justify-between p-6 border border-zinc-900 bg-zinc-950/20 hover:border-red-900/40 transition-all duration-500 overflow-hidden"
                   >
-                    <FaEye size={18} />
-                  </Motion.div>
-                  <FaTerminal className="text-zinc-900" />
-                </div>
+                    <div className="flex items-center gap-6">
+                      <span className="text-xs text-zinc-800 group-hover:text-red-900 font-mono transition-colors">
+                        [{indicePrimero + index + 1 < 10 ? `0${indicePrimero + index + 1}` : indicePrimero + index + 1}]
+                      </span>
+                      <div>
+                        <h2 className="text-lg text-zinc-400 group-hover:text-zinc-100 transition-colors uppercase tracking-wider flex items-center gap-3">
+                          {reg.titulo}
+                          <FaLock className="text-[10px] text-zinc-800 group-hover:text-red-900 transition-colors" />
+                        </h2>
+                        <span className="text-[9px] text-zinc-700 uppercase tracking-widest">
+                          {reg.fecha} // RIESGO: <span className={reg.riesgo === "CRÍTICO" ? "text-red-700" : ""}>{reg.riesgo}</span>
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <Motion.div
+                        whileHover={{ rotate: 180 }}
+                        className="text-zinc-800 group-hover:text-red-600 transition-colors"
+                      >
+                        <FaEye size={18} />
+                      </Motion.div>
+                      <FaTerminal className="text-zinc-900" />
+                    </div>
 
-                {/* EFECTO DE RESPLANDOR AL PASAR EL MOUSE */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 pointer-events-none bg-red-600 transition-opacity" />
-              </Link>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 pointer-events-none bg-red-600 transition-opacity" />
+                  </Link>
+                </Motion.div>
+              ))}
             </Motion.div>
-          ))}
+          </AnimatePresence>
         </section>
+
+        {/* --- NUEVA PAGINACIÓN (Manteniendo la estética original) --- */}
+        <div className="mt-12 flex justify-center items-center gap-8 font-elite">
+          <button
+            onClick={() => setPaginaActual(p => Math.max(1, p - 1))}
+            disabled={paginaActual === 1}
+            className={`text-[10px] tracking-[0.3em] uppercase transition-all flex items-center gap-2 ${paginaActual === 1 ? "opacity-5" : "text-zinc-700 hover:text-red-700"}`}
+          >
+            [REBOBINAR_MEMORIA]
+          </button>
+
+          <div className="flex gap-2">
+            {[...Array(totalPaginas)].map((_, i) => (
+              <div 
+                key={i} 
+                className={`w-1.5 h-1.5 rotate-45 transition-all duration-500 ${i + 1 === paginaActual ? "bg-red-700 shadow-[0_0_8px_red] scale-125" : "bg-zinc-900"}`} 
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={() => setPaginaActual(p => Math.min(totalPaginas, p + 1))}
+            disabled={paginaActual === totalPaginas}
+            className={`text-[10px] tracking-[0.3em] uppercase transition-all flex items-center gap-2 ${paginaActual === totalPaginas ? "opacity-5" : "text-zinc-700 hover:text-red-700 animate-pulse"}`}
+          >
+            [RASTREAR_MÁS_ERRORES]
+          </button>
+        </div>
 
         <footer className="mt-20 pt-8 border-t border-zinc-900 flex flex-col items-center gap-4">
           <FaSkull className="text-zinc-900 text-3xl" />

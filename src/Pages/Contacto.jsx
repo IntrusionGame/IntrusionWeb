@@ -124,7 +124,7 @@ const Contacto = () => {
             
             <div className="grid gap-6">
               {[
-                { name: "Instagram", icon: <FaInstagram />, user: "@INTRUSION_DEV", link: "#" },
+                { name: "Instagram", icon: <FaInstagram />, user: "@Intrusion_Game", link: "https://www.instagram.com/intrusion_game?igsh=MTNveTVlbDViMXltZA==" },
                 { name: "Twitter / X", icon: <FaTwitter />, user: "ARCHITECT_X", link: "#" },
                 { name: "Discord", icon: <FaDiscord />, user: "VOID_SERVER", link: "#" }
               ].map((social, i) => (

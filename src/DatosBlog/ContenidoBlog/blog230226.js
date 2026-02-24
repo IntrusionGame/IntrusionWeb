@@ -1,8 +1,8 @@
-import Logo from "../../Imagenes/Blog/Logo.jpg";
-import Casa from "../../Imagenes/Blog/Casa.jpg";
-import Menu from "../../Imagenes/Blog/Menu.jpg";
-import Github1 from "../../Imagenes/Blog/ProyectoGithub.png";
-import Github2 from "../../Imagenes/Blog/RamasGithub.png";
+import Logo from "../../Imagenes/Blog/Dia_23_Febrero/Logo.jpg";
+import Casa from "../../Imagenes/Blog/Dia_23_Febrero/Casa.jpg";
+import Menu from "../../Imagenes/Blog/Dia_23_Febrero/Menu.jpg";
+import Github1 from "../../Imagenes/Blog/Dia_23_Febrero/ProyectoGithub.png";
+import Github2 from "../../Imagenes/Blog/Dia_23_Febrero/RamasGithub.png";
 
 export const incidentesData = {
   230226: {
@@ -110,6 +110,14 @@ export const incidentesData = {
         tipo: "imagen",
         src: Github2,
         caption: "CAPTURA_SISTEMA: Manifestación de las ramas del proyecto.",
+      },
+      {
+        tipo: "titulo",
+        texto: "Web.",
+      },
+      {
+        tipo: "parrafo",
+        texto: "El jefe de web se encargo de hacer la pagina del blog con sus contenidos, mas retocar cosas de formato responsive.",
       },
     ],
   },
