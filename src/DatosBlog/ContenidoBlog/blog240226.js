@@ -7,7 +7,6 @@ import Casa2 from "../../Imagenes/Blog/Dia_24_de_Febrero/ImagenCasa2.png";
 import Player from "../../Imagenes/Blog/Dia_24_de_Febrero/Player.png";
 import Key from "../../Imagenes/Blog/Dia_24_de_Febrero/Key.png";
 
-
 export const incidentesData = {
   240226: {
     titulo: "PROTOCOLO_24022026.log",
@@ -34,7 +33,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "El resto de diseñadores estan trabajando en el blockout del resto de las habitaciones.",
+        texto: "El resto de diseñadores están trabajando en el blockout del resto de las habitaciones.",
       },
       {
         tipo: "imagen",
@@ -44,7 +43,7 @@ export const incidentesData = {
       {
         tipo: "imagen",
         src: Blockout3,
-        caption: "CAPTURA_SISTEMA: Manifestación del blockout de la habiacion Revelado.",
+        caption: "CAPTURA_SISTEMA: Manifestación del blockout de la habitación Revelado.",
       },
       {
         tipo: "titulo",
@@ -52,7 +51,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Los programadores hoy se han dedicado a hacer sus diferentes partes del videjuego como enemigo, contraseña y añadir la ficha tenica.",
+        texto: "Los programadores hoy se han dedicado a hacer sus diferentes partes del videojuego como enemigo, contraseña y añadir la ficha técnica.",
       },
       {
         tipo: "subtitulo",
@@ -60,7 +59,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Añadio el enemigo con su collider, sus animacions y el codigo para que funcione",
+        texto: "Añadió el enemigo con su collider, sus animaciones y el código para que funcione.",
       },
       {
         tipo: "imagen",
@@ -69,11 +68,11 @@ export const incidentesData = {
       },
       {
         tipo: "subtitulo",
-        texto: "Victor Hugo",
+        texto: "Víctor Hugo",
       },
       {
         tipo: "parrafo",
-        texto: "Esperar a que le resuelvan dudas y mejora el canal del Discord.",
+        texto: "Esperar a que le resuelvan dudas y mejora el canal de Discord.",
       },
       {
         tipo: "subtitulo",
@@ -81,16 +80,16 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Ha documentado una mecanica importante para el videojuego",
+        texto: "Ha documentado una mecánica importante para el videojuego.",
       },
       {
         tipo: "imagen",
         src: Mecanica,
-        caption: "CAPTURA_SISTEMA: Manifestación de la mecanica documentada por Francisco.",
+        caption: "CAPTURA_SISTEMA: Manifestación de la mecánica documentada por Francisco.",
       },
       {
         tipo: "subtitulo",
-        texto: "Adrian",
+        texto: "Adrián",
       },
       {
         tipo: "parrafo",
@@ -107,7 +106,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Ha creado el movimiento y camara del jugador.",
+        texto: "Ha creado el movimiento y cámara del jugador.",
       },
       {
         tipo: "imagen",
@@ -120,8 +119,8 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "El Jefe se encargo de que el enlace funcione correctamente, mejoro el apartadop del blog, añadio el logo y favicon que le pasaron ayer desde diseño, por ultimo creo la pagina de juego, tambien creo la cuenta oficial del videojuego.",
-      }
+        texto: "El Jefe se encargó de que el enlace funcione correctamente, mejoró el apartado del blog, añadió el logo y favicon que le pasaron ayer desde diseño, por último creó la página de juego, también creó la cuenta oficial del videojuego.",
+      },
     ],
   },
 };
