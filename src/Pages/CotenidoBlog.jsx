@@ -57,13 +57,18 @@ const TranscripcionIncidente = () => {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-black font-elite text-red-600 text-xl uppercase tracking-widest z-[100]">
+      /* AJUSTE: h-screen y flex-col en móvil para asegurar centrado vertical perfecto */
+      <div className="fixed inset-0 w-full h-screen flex flex-col md:flex-row items-center justify-center bg-black font-elite text-red-600 text-lg md:text-xl uppercase tracking-widest z-[100] px-6 text-center">
         <Motion.div 
           animate={{ opacity: [1, 0.4, 1] }} 
           transition={{ repeat: Infinity, duration: 1 }}
+          /* Ajuste de flex para que el icono y el texto se apilen en el centro exacto */
+          className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-0"
         >
-          <FaSearch className="inline-block mr-4" /> 
-          SISTEMA_BUSCANDO: {id?.toUpperCase()}...
+          <FaSearch className="text-2xl md:text-xl md:mr-4" /> 
+          <span className="block">
+            SISTEMA_BUSCANDO: <br className="md:hidden" /> {id?.toUpperCase()}...
+          </span>
         </Motion.div>
       </div>
     );
@@ -71,11 +76,11 @@ const TranscripcionIncidente = () => {
 
   if (!incidente) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-black font-elite text-red-700 z-[100]">
-        <div className="text-center p-6 border border-red-900/50 bg-red-950/5">
-          <FaExclamationTriangle className="text-5xl mb-4 mx-auto animate-pulse" />
-          <h2 className="text-2xl mb-2 uppercase">Acceso Denegado</h2>
-          <p className="tracking-[0.3em] text-xs opacity-70">
+      <div className="fixed inset-0 flex items-center justify-center bg-black font-elite text-red-700 z-[100] px-6">
+        <div className="text-center p-6 border border-red-900/50 bg-red-950/5 w-full max-w-sm">
+          <FaExclamationTriangle className="text-4xl md:text-5xl mb-4 mx-auto animate-pulse" />
+          <h2 className="text-xl md:text-2xl mb-2 uppercase">Acceso Denegado</h2>
+          <p className="tracking-[0.2em] md:tracking-[0.3em] text-[10px] opacity-70">
             EL_ARCHIVO_{id}_NO_EXISTE_O_ESTÁ_CORRUPTO
           </p>
           <Link 
@@ -90,16 +95,17 @@ const TranscripcionIncidente = () => {
   }
 
   return (
-<div key={id} className="fixed inset-0 w-full h-full bg-black overflow-y-auto custom-scrollbar font-elite text-zinc-400 pb-32">      <style>
+    /* AJUSTE: overflow-x-hidden para evitar el desborde en el ancho del iPhone */
+    <div key={id} className="fixed inset-0 w-full h-full bg-black overflow-y-auto overflow-x-hidden custom-scrollbar font-elite text-zinc-400 pb-32">
+      <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Special+Elite&display=swap');
           .font-glitch { font-family: 'Rubik Glitch', system-ui; }
           .font-elite { font-family: 'Special Elite', serif !important; }
           
-          .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+          .custom-scrollbar::-webkit-scrollbar { width: 4px; }
           .custom-scrollbar::-webkit-scrollbar-track { background: #000; }
           .custom-scrollbar::-webkit-scrollbar-thumb { background: #450a0a; border: 1px solid #000; }
-          .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #7f1d1d; }
           .custom-scrollbar { scrollbar-width: thin; scrollbar-color: #450a0a #000; }
 
           .scanline {
@@ -113,18 +119,17 @@ const TranscripcionIncidente = () => {
 
       <div className="scanline" />
       
-      {/* BARRA DE NAVEGACIÓN SUPERIOR */}
-      {/* BARRA DE NAVEGACIÓN SUPERIOR IZQUIERDA */}
-      <div className="fixed top-6 left-6 z-[60] flex items-center gap-4 font-elite">
+      {/* BARRA DE NAVEGACIÓN SUPERIOR IZQUIERDA - Ajustada para Safe Area */}
+      <div className="fixed top-4 left-4 md:top-6 md:left-6 z-[60] flex items-center gap-2 md:gap-4 font-elite bg-black/50 backdrop-blur-sm p-2 rounded">
         
         {/* BOTÓN 1: CERRAR ARCHIVO */}
         <Link to="/blog">
           <Motion.div 
-            whileHover={{ x: -5 }} // Volvemos al desplazamiento original
+            whileHover={{ x: -5 }} 
             className="flex items-center gap-2 text-zinc-700 hover:text-red-700 transition-colors cursor-pointer group"
           >
-            <FaChevronLeft className="group-hover:animate-pulse text-xs" />
-            <span className="text-xs tracking-widest uppercase italic">CERRAR_ARCHIVO</span>
+            <FaChevronLeft className="group-hover:animate-pulse text-[10px] md:text-xs" />
+            <span className="text-[9px] md:text-xs tracking-widest uppercase italic">CERRAR_ARCHIVO</span>
           </Motion.div>
         </Link>
 
@@ -137,24 +142,24 @@ const TranscripcionIncidente = () => {
             whileHover={{ x: -5 }} 
             className="flex items-center gap-2 text-zinc-700 hover:text-red-700 transition-colors cursor-pointer group"
           >
-            {/* Opcional: puedes añadir el icono aquí también si quieres simetría total */}
-            <span className="text-xs tracking-widest uppercase italic">SISTEMA_RAÍZ</span>
+            <span className="text-[9px] md:text-xs tracking-widest uppercase italic">RAÍZ</span>
           </Motion.div>
         </Link>
       </div>
 
-      {/* CUERPO DEL DOCUMENTO CON ANIMACIÓN POR PASOS */}
+      {/* CUERPO DEL DOCUMENTO - px-4 en móvil para iPhone 15 */}
       <Motion.div 
-        className="max-w-3xl mx-auto pt-24 pb-20 px-6"
+        className="max-w-3xl mx-auto pt-24 md:pt-32 pb-20 px-4 md:px-6"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <Motion.header variants={itemVariants} className="border-b border-red-900/30 pb-8 mb-12">
-          <h1 className="text-3xl md:text-5xl font-glitch text-red-700 uppercase mb-4 tracking-tighter">
+        <Motion.header variants={itemVariants} className="border-b border-red-900/30 pb-6 md:pb-8 mb-10 md:mb-12">
+          {/* AJUSTE: Título responsivo text-3xl en móvil */}
+          <h1 className="text-3xl md:text-5xl font-glitch text-red-700 uppercase mb-4 tracking-tighter leading-tight">
             {incidente.titulo}
           </h1>
-          <div className="flex flex-wrap gap-4 text-[10px] tracking-widest uppercase text-zinc-500">
+          <div className="flex flex-wrap gap-2 md:gap-4 text-[9px] md:text-[10px] tracking-widest uppercase text-zinc-500">
             <span className="flex items-center gap-2 border border-red-900/40 px-2 py-1">
               <FaFileContract className="text-red-700" /> {incidente.clasificacion}
             </span>
@@ -164,7 +169,7 @@ const TranscripcionIncidente = () => {
           </div>
         </Motion.header>
 
-        <div className="space-y-10">
+        <div className="space-y-8 md:space-y-10">
           {incidente.contenido.map((item, idx) => (
             <Motion.div 
               key={idx} 
@@ -172,9 +177,10 @@ const TranscripcionIncidente = () => {
             >
               {/* RENDERIZADO DINÁMICO POR TIPO DE CONTENIDO */}
               {item.tipo === "titulo" && (
-                <div className="relative flex flex-col mb-8 mt-16 group">
+                <div className="relative flex flex-col mb-6 md:mb-8 mt-12 md:mt-16 group">
                   <div className="flex items-center gap-4 mb-2">
-                    <h2 className="text-2xl md:text-3xl font-glitch text-red-600 uppercase tracking-[0.2em] bg-gradient-to-r from-red-950/30 to-transparent px-4 py-2 border-l-4 border-red-700 relative overflow-hidden">
+                    {/* AJUSTE: Título interno text-xl en móvil */}
+                    <h2 className="text-xl md:text-3xl font-glitch text-red-600 uppercase tracking-[0.15em] md:tracking-[0.2em] bg-gradient-to-r from-red-950/30 to-transparent px-3 md:px-4 py-2 border-l-4 border-red-700 relative overflow-hidden">
                       {item.texto}
                       <Motion.div 
                         className="absolute inset-0 bg-red-500/10 w-1/2 -skew-x-12"
@@ -182,7 +188,7 @@ const TranscripcionIncidente = () => {
                         transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
                       />
                     </h2>
-                    <div className="h-[1px] flex-grow bg-red-900/40 relative">
+                    <div className="hidden sm:block h-[1px] flex-grow bg-red-900/40 relative">
                       <div className="absolute right-0 -top-1 w-2 h-2 bg-red-700 rotate-45" />
                     </div>
                   </div>
@@ -190,33 +196,33 @@ const TranscripcionIncidente = () => {
               )}
 
               {item.tipo === "subtitulo" && (
-                <div className="flex items-center gap-3 mb-4 mt-8 opacity-80">
+                <div className="flex items-center gap-3 mb-4 mt-6 md:mt-8 opacity-80">
                   <div className="w-2 h-2 bg-red-900 rotate-45" />
-                  <h3 className="text-sm md:text-base font-elite text-zinc-400 uppercase tracking-[0.3em] border-b border-red-900/30 pb-1">
+                  <h3 className="text-xs md:text-base font-elite text-zinc-400 uppercase tracking-[0.2em] md:tracking-[0.3em] border-b border-red-900/30 pb-1">
                     {item.texto}
                   </h3>
                 </div>
               )}
 
               {item.tipo === "parrafo" && (
-                <p className="text-lg leading-relaxed text-zinc-300 font-elite indent-8">
+                <p className="text-base md:text-lg leading-relaxed text-zinc-300 font-elite indent-4 md:indent-8">
                   {item.texto}
                 </p>
               )}
 
               {item.tipo === "imagen" && (
-                <div className="relative group my-12 flex flex-col items-center">
+                <div className="relative group my-8 md:my-12 flex flex-col items-center">
                   <div className="absolute -inset-1 bg-red-900/10 blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
                   <div className="relative border border-zinc-900 bg-black w-full overflow-hidden flex flex-col">
                     <div className="flex justify-center bg-zinc-950/50">
                       <img 
                         src={item.src} 
-                        className="w-auto h-auto max-w-full max-h-[600px] object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+                        className="w-full h-auto max-h-[500px] md:max-h-[600px] object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
                         alt="Evidencia" 
                       />
                     </div>
                     <div className="p-3 border-t border-zinc-900 bg-black/80 font-elite text-center">
-                      <p className="text-[10px] text-red-900 uppercase tracking-widest flex items-center justify-center gap-2">
+                      <p className="text-[8px] md:text-[10px] text-red-900 uppercase tracking-widest flex items-center justify-center gap-2">
                         <FaExclamationTriangle />
                         <span>{item.caption}</span>
                       </p>
@@ -228,9 +234,9 @@ const TranscripcionIncidente = () => {
           ))}
         </div>
 
-        <Motion.footer variants={itemVariants} className="mt-20 pt-10 border-t border-zinc-900 flex flex-col items-center gap-6 opacity-40">
-          <FaSkull className="text-red-900 text-3xl" />
-          <p className="text-[9px] tracking-[0.6em] uppercase text-center font-elite">
+        <Motion.footer variants={itemVariants} className="mt-16 md:mt-20 pt-10 border-t border-zinc-900 flex flex-col items-center gap-6 opacity-40">
+          <FaSkull className="text-red-900 text-2xl md:text-3xl" />
+          <p className="text-[7px] md:text-[9px] tracking-[0.4em] md:tracking-[0.6em] uppercase text-center font-elite px-4">
             fin de la transmisión // la curiosidad mató al arquitecto
           </p>
         </Motion.footer>

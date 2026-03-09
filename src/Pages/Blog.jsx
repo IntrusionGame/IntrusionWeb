@@ -17,14 +17,15 @@ const Bitacora = () => {
   const registrosActuales = DatosBlog.slice(indicePrimero, indiceUltimo);
 
   return (
-    <div className="fixed inset-0 w-full h-full bg-black overflow-y-auto custom-scrollbar font-elite text-zinc-500 select-none">
+    /* AJUSTE: overflow-x-hidden para evitar desborde en iPhone 15 */
+    <div className="fixed inset-0 w-full h-full bg-black overflow-y-auto overflow-x-hidden custom-scrollbar font-elite text-zinc-500 select-none">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Special+Elite&display=swap');
           .font-glitch { font-family: 'Rubik Glitch', system-ui; }
           .font-elite { font-family: 'Special Elite', serif !important; }
 
-          .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+          .custom-scrollbar::-webkit-scrollbar { width: 4px; }
           .custom-scrollbar::-webkit-scrollbar-track { background: #000; }
           .custom-scrollbar::-webkit-scrollbar-thumb { background: #450a0a; border: 1px solid #000; }
           .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #7f1d1d; }
@@ -41,7 +42,7 @@ const Bitacora = () => {
 
       <div className="scanline" />
       
-      <div className="fixed top-6 left-6 z-[60] flex items-center font-elite">
+      <div className="fixed top-4 left-4 md:top-6 md:left-6 z-[60] flex items-center font-elite">
         <Link to="/">
           <Motion.div 
             whileHover={{ x: -2 }}
@@ -53,17 +54,19 @@ const Bitacora = () => {
         </Link>
       </div>
 
-      <div className="max-w-4xl mx-auto pt-24 pb-20 px-6">
+      {/* AJUSTE: px-4 en móvil para evitar que el contenido toque los bordes del iPhone */}
+      <div className="max-w-4xl mx-auto pt-20 md:pt-24 pb-20 px-4 md:px-6">
         <header className="border-b border-zinc-900 pb-8 mb-12">
           <Motion.h1 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-4xl font-glitch text-red-700 uppercase tracking-tighter"
+            /* AJUSTE: text-2xl en móvil para que el título no desborde */
+            className="text-2xl md:text-4xl font-glitch text-red-700 uppercase tracking-tighter"
           >
             Bitácora de Incidencias
           </Motion.h1>
-          <div className="flex items-center gap-4 mt-2">
-            <span className="text-[10px] animate-pulse uppercase tracking-[0.3em]">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 md:gap-4 mt-2">
+            <span className="text-[8px] md:text-[10px] animate-pulse uppercase tracking-[0.2em] md:tracking-[0.3em]">
               Acceso No Autorizado Detectado // Pág_{paginaActual}_de_{totalPaginas}
             </span>
             <div className="h-[1px] flex-grow bg-red-900/20" />
@@ -88,18 +91,20 @@ const Bitacora = () => {
                 >
                   <Link 
                     to={`/blog/protocolo${reg.id}`} 
-                    className="group relative flex items-center justify-between p-6 border border-zinc-900 bg-zinc-950/20 hover:border-red-900/40 transition-all duration-500 overflow-hidden"
+                    /* AJUSTE: p-4 en móvil para dar espacio a los iconos internos */
+                    className="group relative flex items-center justify-between p-4 md:p-6 border border-zinc-900 bg-zinc-950/20 hover:border-red-900/40 transition-all duration-500 overflow-hidden"
                   >
-                    <div className="flex items-center gap-6">
-                      <span className="text-xs text-zinc-800 group-hover:text-red-900 font-mono transition-colors">
+                    <div className="flex items-center gap-4 md:gap-6">
+                      <span className="text-[10px] md:text-xs text-zinc-800 group-hover:text-red-900 font-mono transition-colors">
                         [{indicePrimero + index + 1 < 10 ? `0${indicePrimero + index + 1}` : indicePrimero + index + 1}]
                       </span>
                       <div>
-                        <h2 className="text-lg text-zinc-400 group-hover:text-zinc-100 transition-colors uppercase tracking-wider flex items-center gap-3">
+                        {/* AJUSTE: text-sm en móvil para que el título del protocolo quepa en una línea */}
+                        <h2 className="text-sm md:text-lg text-zinc-400 group-hover:text-zinc-100 transition-colors uppercase tracking-wider flex items-center gap-2 md:gap-3">
                           {reg.titulo}
-                          <FaLock className="text-[10px] text-zinc-800 group-hover:text-red-900 transition-colors" />
+                          <FaLock className="text-[8px] md:text-[10px] text-zinc-800 group-hover:text-red-900 transition-colors" />
                         </h2>
-                        <span className="text-[9px] text-zinc-700 uppercase tracking-widest">
+                        <span className="text-[8px] md:text-[9px] text-zinc-700 uppercase tracking-widest block mt-1">
                           {reg.fecha} // RIESGO: <span className={reg.riesgo === "CRÍTICO" ? "text-red-700" : ""}>{reg.riesgo}</span>
                         </span>
                       </div>
@@ -110,9 +115,9 @@ const Bitacora = () => {
                         whileHover={{ rotate: 180 }}
                         className="text-zinc-800 group-hover:text-red-600 transition-colors"
                       >
-                        <FaEye size={18} />
+                        <FaEye size={16} className="md:w-[18px]" />
                       </Motion.div>
-                      <FaTerminal className="text-zinc-900" />
+                      <FaTerminal className="hidden sm:block text-zinc-900" />
                     </div>
 
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-10 pointer-events-none bg-red-600 transition-opacity" />
@@ -123,12 +128,13 @@ const Bitacora = () => {
           </AnimatePresence>
         </section>
 
-        {/* --- NUEVA PAGINACIÓN (Manteniendo la estética original) --- */}
-        <div className="mt-12 flex justify-center items-center gap-8 font-elite">
+        {/* --- NUEVA PAGINACIÓN (Respetando estética y textos originales) --- */}
+        <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 font-elite">
           <button
             onClick={() => setPaginaActual(p => Math.max(1, p - 1))}
             disabled={paginaActual === 1}
-            className={`text-[10px] tracking-[0.3em] uppercase transition-all flex items-center gap-2 ${paginaActual === 1 ? "opacity-5" : "text-zinc-700 hover:text-red-700"}`}
+            /* AJUSTE: texto responsivo para evitar desborde lateral */
+            className={`text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase transition-all flex items-center gap-2 ${paginaActual === 1 ? "opacity-5" : "text-zinc-700 hover:text-red-700"}`}
           >
             [REBOBINAR_MEMORIA]
           </button>
@@ -145,15 +151,15 @@ const Bitacora = () => {
           <button
             onClick={() => setPaginaActual(p => Math.min(totalPaginas, p + 1))}
             disabled={paginaActual === totalPaginas}
-            className={`text-[10px] tracking-[0.3em] uppercase transition-all flex items-center gap-2 ${paginaActual === totalPaginas ? "opacity-5" : "text-zinc-700 hover:text-red-700 animate-pulse"}`}
+            className={`text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase transition-all flex items-center gap-2 ${paginaActual === totalPaginas ? "opacity-5" : "text-zinc-700 hover:text-red-700 animate-pulse"}`}
           >
             [RASTREAR_MÁS_ERRORES]
           </button>
         </div>
 
         <footer className="mt-20 pt-8 border-t border-zinc-900 flex flex-col items-center gap-4">
-          <FaSkull className="text-zinc-900 text-3xl" />
-          <p className="text-[9px] text-zinc-700 uppercase tracking-[0.5em] text-center">
+          <FaSkull className="text-zinc-900 text-2xl md:text-3xl" />
+          <p className="text-[8px] md:text-[9px] text-zinc-700 uppercase tracking-[0.3em] md:tracking-[0.5em] text-center px-4">
             Si puedes leer esto, ya es demasiado tarde para el Sujeto_00.
           </p>
         </footer>

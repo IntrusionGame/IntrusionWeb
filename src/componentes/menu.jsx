@@ -47,57 +47,31 @@ const Menu = () => {
     };
   }, []);
 
-  // Configuración de rutas y navegación
   const menuItems = [
-    {
-      id: 1,
-      label: "INICIAR RITUAL",
-      desc: "Comenzar la partida",
-      path: "/juego",
-    },
-    {
-      id: 2,
-      label: "EXPEDIENTES",
-      desc: "Puzles y archivos",
-      path: "/expedientes",
-    },
-    {
-      id: 3,
-      label: "MANIFIESTO",
-      desc: "Sobre los arquitectos de este vacío",
-      path: "/SobreNosotros",
-    },
-    {
-      id: 4,
-      label: "CANAL DE ENLACE",
-      desc: "Establecer conexión con los arquitectos",
-      path: "/contacto",
-    },
-    {
-   id: 5,
-   label: "BITÁCORA DE FALLOS",
-   desc: "Registros recuperados del vacío",
-   path: "/blog",
- },
+    { id: 1, label: "INICIAR RITUAL", desc: "Comenzar la partida", path: "/juego" },
+    { id: 2, label: "EXPEDIENTES", desc: "Puzles y archivos", path: "/expedientes" },
+    { id: 3, label: "MANIFIESTO", desc: "Sobre los arquitectos de este vacío", path: "/SobreNosotros" },
+    { id: 4, label: "CANAL DE ENLACE", desc: "Establecer conexión con los arquitectos", path: "/contacto" },
+    { id: 5, label: "BITÁCORA DE FALLOS", desc: "Registros recuperados del vacío", path: "/blog" },
   ];
 
-  // Animación de entrada Glitch
   const entradaTerror = {
     hidden: { opacity: 0, x: -40, skewX: 30 },
     visible: {
       opacity: [0, 1, 0.2, 1, 0.5, 1],
       x: [0, -10, 10, -5, 5, 0],
       skewX: [30, -30, 15, -15, 0],
-      transition: {
-        duration: 0.6,
-        times: [0, 0.1, 0.2, 0.3, 0.5, 1],
-        ease: "easeInOut",
-      },
+      transition: { duration: 0.6, times: [0, 0.1, 0.2, 0.3, 0.5, 1], ease: "easeInOut" },
     },
   };
 
   return (
-    <div className="fixed inset-0 w-screen h-screen bg-black overflow-hidden flex flex-col justify-center items-start pl-8 sm:pl-12 md:pl-20 lg:pl-32 select-none">
+    /* CAMBIO ESTRATÉGICO: 
+       - Móvil: justify-center (como estaba)
+       - Tablet (sm): justify-start para que no se corte la Bitácora
+       - Escritorio (md): vuelve a justify-center
+    */
+    <div className="fixed inset-0 w-screen h-screen bg-black overflow-hidden flex flex-col justify-center sm:justify-start md:justify-center items-start pl-8 sm:pl-12 md:pl-20 lg:pl-32 select-none">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Special+Elite&display=swap');
@@ -106,30 +80,29 @@ const Menu = () => {
         `}
       </style>
 
-      {/* Capas de Post-Procesado (CRT y Ruido) */}
-      <canvas
-        ref={canvasRef}
-        className="pointer-events-none absolute inset-0 z-40 opacity-[0.15] mix-blend-screen"
-      />
+      {/* Capas de Post-Procesado */}
+      <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 z-40 opacity-[0.15] mix-blend-screen" />
       <div className="pointer-events-none absolute inset-0 z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.15)_50%),linear-gradient(90deg,rgba(255,0,0,0.04),rgba(0,255,0,0.01),rgba(0,0,255,0.04))] bg-[length:100%_3px,2px_100%]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square bg-red-900/10 blur-[80px] md:blur-[120px] rounded-full" />
 
-      {/* Título Principal */}
+      {/* Título / Logo */}
       <motion.div
         variants={entradaTerror}
         initial="hidden"
         animate="visible"
-        className="mb-8 md:mb-12 z-10"
+        // En tablet (sm) damos un padding top y bajamos el margen para ganar espacio
+        className="mb-8 sm:mb-4 md:mb-12 z-10 pt-0 sm:pt-16 md:pt-0"
       >
         <img 
-          src={LogoIntrusion} 
-          alt="INTRUSION LOGO" 
-          className="w-auto h-[60px] sm:h-[80px] md:h-[100px] lg:h-[140px] object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"
-        />
+  src={LogoIntrusion} 
+  alt="INTRUSION LOGO" 
+
+  className="w-auto h-[45px] sm:h-[50px] md:h-[100px] lg:h-[140px] object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"
+/>
       </motion.div>
 
-      {/* Navegación Interactiva */}
-      <nav className="space-y-4 md:space-y-6 relative z-10 w-full md:w-auto font-elite">
+      {/* Navegación */}
+      <nav className="space-y-4 sm:space-y-2 md:space-y-6 relative z-10 w-full md:w-auto font-elite">
         {menuItems.map((item, index) => (
           <Link to={item.path} key={item.id} className="block no-underline">
             <motion.div
@@ -146,7 +119,7 @@ const Menu = () => {
                   className={`h-[1px] md:h-[2px] transition-all duration-500 bg-red-700 ${activeItem === item.id ? "w-8 md:w-12" : "w-0"}`}
                 />
                 <h2
-                  className={`text-xl sm:text-2xl md:text-3xl transition-colors duration-300 uppercase tracking-tighter ${
+                  className={`text-xl sm:text-lg md:text-3xl transition-colors duration-300 uppercase tracking-tighter ${
                     activeItem === item.id
                       ? "text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.4)]"
                       : "text-zinc-500"
@@ -156,7 +129,6 @@ const Menu = () => {
                 </h2>
               </div>
 
-              {/* Contenedor de Descripción Dinámica */}
               <div className="h-4 md:h-6">
                 <AnimatePresence>
                   {activeItem === item.id && (
@@ -164,7 +136,7 @@ const Menu = () => {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0 }}
-                      className="text-[10px] md:text-xs text-zinc-600 ml-11 md:ml-16 uppercase tracking-widest italic"
+                      className="text-[10px] sm:text-[9px] md:text-xs text-zinc-600 ml-11 sm:ml-12 md:ml-16 uppercase tracking-widest italic"
                     >
                       {item.desc}
                     </motion.p>
