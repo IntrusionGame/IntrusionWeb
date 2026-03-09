@@ -48,12 +48,11 @@ const Menu = () => {
   const menuItems = [
     { id: 1, label: "INICIAR RITUAL", desc: "Comenzar la partida", path: "/juego" },
     { id: 2, label: "EXPEDIENTES", desc: "Puzles y archivos", path: "/expedientes" },
-    { id: 3, label: "MANIFIESTO", desc: "Sobre los arquitectos de este vacío", path: "/SobreNosotros" },
-    { id: 4, label: "CANAL DE ENLACE", desc: "Establecer conexión con los arquitectos", path: "/contacto" },
-    { id: 5, label: "BITÁCORA DE FALLOS", desc: "Registros recuperados del vacío", path: "/blog" },
+    { id: 3, label: "MANIFIESTO", desc: "Sobre los arquitectos", path: "/SobreNosotros" },
+    { id: 4, label: "CANAL DE ENLACE", desc: "Establecer conexión", path: "/contacto" },
+    { id: 5, label: "BITÁCORA DE FALLOS", desc: "Registros recuperados", path: "/blog" },
   ];
 
-  // ANIMACIÓN DE TERROR CORREGIDA: Pesada, asimétrica y con glitch real
   const entradaTerror = {
     hidden: { opacity: 0, x: -15, filter: "blur(15px) brightness(0)" },
     visible: {
@@ -73,79 +72,89 @@ const Menu = () => {
   };
 
   return (
-    <div className="fixed inset-0 w-screen h-screen bg-black overflow-hidden flex flex-col justify-center items-start pl-8 sm:pl-12 md:pl-20 lg:pl-32 select-none">
+    <div className="fixed inset-0 w-screen h-screen bg-black overflow-hidden select-none font-elite">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Special+Elite&display=swap');
           .font-glitch { font-family: 'Rubik Glitch', system-ui; }
-          .font-elite { font-family: 'Special Elite', serif; }
+          
+          /* RESET TOTAL PARA TABLETS EN HORIZONTAL */
+          .layout-container {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            height: 100%;
+            padding: 2rem 0 2rem 10%; /* Posicionamiento a la izquierda */
+          }
 
-          /* SOLUCIÓN SAMSUNG TAB A9+ Y TABLETS HORIZONTALES */
-          @media (max-height: 600px) {
-            .compact-container { padding-top: 1rem !important; }
-            .compact-logo { max-height: 35px !important; margin-bottom: 1rem !important; }
-            .compact-nav { gap: 0.5rem !important; }
-            .compact-item { font-size: 1rem !important; }
-            .compact-desc { display: none; } /* Ocultamos descripciones en horizontal para salvar la Bitácora */
+          @media (max-height: 550px) or (orientation: landscape) and (max-width: 1300px) {
+            .layout-container { padding: 1rem 0 1rem 5%; }
+            .logo-box { max-height: 40px !important; margin-bottom: 0.5rem !important; }
+            .nav-box { gap: 0.2rem !important; }
+            .menu-text { font-size: 1.1rem !important; line-height: 1 !important; }
+            .desc-text { display: none !important; } /* Eliminamos el hueco de la descripción */
           }
         `}
       </style>
 
       <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 z-40 opacity-[0.15] mix-blend-screen" />
       <div className="pointer-events-none absolute inset-0 z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.15)_50%),linear-gradient(90deg,rgba(255,0,0,0.04),rgba(0,255,0,0.01),rgba(0,0,255,0.04))] bg-[length:100%_3px,2px_100%]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square bg-red-900/10 blur-[80px] md:blur-[120px] rounded-full" />
+      
+      <div className="layout-container relative z-10">
+        {/* Logo con altura controlada */}
+        <motion.div
+          variants={entradaTerror}
+          initial="hidden"
+          animate="visible"
+          className="logo-box flex items-center mb-10 md:mb-16"
+        >
+          <img 
+            src={LogoIntrusion} 
+            alt="LOGO" 
+            className="h-[45px] md:h-[110px] w-auto object-contain drop-shadow-[0_0_15px_rgba(185,28,28,0.5)]"
+          />
+        </motion.div>
 
-      {/* Título / Logo */}
-      <motion.div
-        variants={entradaTerror}
-        initial="hidden"
-        animate="visible"
-        className="mb-8 md:mb-12 compact-logo z-10"
-      >
-        <img 
-          src={LogoIntrusion} 
-          alt="INTRUSION LOGO" 
-          className="w-auto h-[40px] sm:h-[45px] md:h-[100px] lg:h-[140px] object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"
-        />
-      </motion.div>
+        {/* Navegación compacta */}
+        <nav className="nav-box flex flex-col justify-start gap-4 md:gap-8">
+          {menuItems.map((item, index) => (
+            <Link to={item.path} key={item.id} className="group no-underline block">
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 + index * 0.1 }}
+                onMouseEnter={() => setActiveItem(item.id)}
+                onMouseLeave={() => setActiveItem(null)}
+                className="flex flex-col"
+              >
+                <div className="flex items-center gap-3">
+                   <span className={`h-[1px] bg-red-700 transition-all duration-300 ${activeItem === item.id ? "w-6 md:w-10" : "w-0"}`} />
+                   <h2 className={`menu-text text-xl md:text-4xl uppercase tracking-tighter transition-colors ${activeItem === item.id ? "text-red-600" : "text-zinc-600"}`}>
+                    {item.label}
+                  </h2>
+                </div>
+                
+                {/* Contenedor de descripción con altura cero si no está activo */}
+                <div className="overflow-hidden">
+                  <AnimatePresence>
+                    {activeItem === item.id && (
+                      <motion.p
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="desc-text text-[9px] md:text-xs text-zinc-700 italic ml-10 mt-1 uppercase tracking-widest"
+                      >
+                        {item.desc}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
+        </nav>
+      </div>
 
-      {/* Navegación */}
-      <nav className="space-y-4 md:space-y-6 compact-nav relative z-10 w-full md:w-auto font-elite">
-        {menuItems.map((item, index) => (
-          <Link to={item.path} key={item.id} className="block no-underline">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 + index * 0.1 }}
-              onMouseEnter={() => setActiveItem(item.id)}
-              onMouseLeave={() => setActiveItem(null)}
-              whileHover={{ x: 10 }}
-              className="group cursor-pointer"
-            >
-              <div className="flex items-center space-x-3 md:space-x-4">
-                <span className={`h-[1px] md:h-[2px] transition-all duration-500 bg-red-700 ${activeItem === item.id ? "w-8 md:w-12" : "w-0"}`} />
-                <h2 className={`text-xl md:text-3xl compact-item transition-colors duration-300 uppercase tracking-tighter ${activeItem === item.id ? "text-red-500" : "text-zinc-500"}`}>
-                  {item.label}
-                </h2>
-              </div>
-              <div className="h-4 md:h-6 compact-desc">
-                <AnimatePresence>
-                  {activeItem === item.id && (
-                    <motion.p
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0 }}
-                      className="text-[10px] md:text-xs text-zinc-600 ml-11 md:ml-16 uppercase tracking-widest italic"
-                    >
-                      {item.desc}
-                    </motion.p>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.div>
-          </Link>
-        ))}
-      </nav>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[500px] aspect-square bg-red-950/10 blur-[100px] rounded-full z-0" />
     </div>
   );
 };
