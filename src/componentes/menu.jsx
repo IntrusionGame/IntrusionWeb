@@ -7,7 +7,6 @@ const Menu = () => {
   const [activeItem, setActiveItem] = useState(null);
   const canvasRef = useRef(null);
 
-  // Sistema de ruido estático (Efecto Visual)
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -24,7 +23,6 @@ const Menu = () => {
       const h = canvas.height;
       const idata = ctx.createImageData(w, h);
       const data = idata.data;
-
       for (let i = 0; i < data.length; i += 4) {
         if (Math.random() > 0.85) {
           const value = Math.random() * 255;
@@ -55,21 +53,13 @@ const Menu = () => {
     { id: 5, label: "BITÁCORA DE FALLOS", desc: "Registros recuperados del vacío", path: "/blog" },
   ];
 
- const entradaTerror = {
-    hidden: { 
-      opacity: 0, 
-      x: -15, 
-      skewX: 0, 
-      filter: "blur(15px) brightness(0)" 
-    },
+  // ANIMACIÓN DE TERROR CORREGIDA: Pesada, asimétrica y con glitch real
+  const entradaTerror = {
+    hidden: { opacity: 0, x: -15, filter: "blur(15px) brightness(0)" },
     visible: {
-      /* Parpadeo más lento y agónico */
       opacity: [0, 0.8, 0.2, 1, 0.7, 1],
-      /* Saltos más controlados para que se vea el desplazamiento */
       x: [0, -20, 15, -5, 2, 0],
-      /* El skew ahora es un impacto inicial que se recupera */
       skewX: [0, 25, -15, 5, 0, 0],
-      /* El brillo y el desenfoque ahora duran lo suficiente para dar atmósfera */
       filter: [
         "blur(10px) brightness(0)", 
         "blur(2px) brightness(1.5)", 
@@ -78,20 +68,11 @@ const Menu = () => {
         "blur(1px) brightness(1)", 
         "blur(0px) brightness(1)"
       ],
-      transition: { 
-        duration: 1.2, // Aumentado para que se aprecie el efecto
-        times: [0, 0.2, 0.4, 0.6, 0.8, 1], // Distribución uniforme para que no sea un flash instantáneo
-        ease: "anticipate" // 'anticipate' le da un peso más orgánico al inicio
-      },
+      transition: { duration: 1.2, times: [0, 0.2, 0.4, 0.6, 0.8, 1], ease: "anticipate" },
     },
-  };;
+  };
 
   return (
-    /* CAMBIO ESTRATÉGICO PARA TABLET HORIZONTAL: 
-       - Usamos 'items-center' en lugar de 'items-start' en móviles si quieres, 
-         pero para respetar tu diseño de izquierda mantengo el pl-X.
-       - La clave es 'justify-center' pero con un 'pt' (padding top) controlado en pantallas cortas.
-    */
     <div className="fixed inset-0 w-screen h-screen bg-black overflow-hidden flex flex-col justify-center items-start pl-8 sm:pl-12 md:pl-20 lg:pl-32 select-none">
       <style>
         {`
@@ -99,16 +80,17 @@ const Menu = () => {
           .font-glitch { font-family: 'Rubik Glitch', system-ui; }
           .font-elite { font-family: 'Special Elite', serif; }
 
-          /* Ajuste para pantallas con poca altura (Tablet Horizontal / iPhone Landscape) */
-          @media (max-height: 500px) {
-            .compact-nav { space-y: 1 !important; }
-            .compact-margin { margin-bottom: 1rem !important; }
-            .compact-logo { height: 40px !important; }
+          /* SOLUCIÓN SAMSUNG TAB A9+ Y TABLETS HORIZONTALES */
+          @media (max-height: 600px) {
+            .compact-container { padding-top: 1rem !important; }
+            .compact-logo { max-height: 35px !important; margin-bottom: 1rem !important; }
+            .compact-nav { gap: 0.5rem !important; }
+            .compact-item { font-size: 1rem !important; }
+            .compact-desc { display: none; } /* Ocultamos descripciones en horizontal para salvar la Bitácora */
           }
         `}
       </style>
 
-      {/* Capas de Post-Procesado */}
       <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 z-40 opacity-[0.15] mix-blend-screen" />
       <div className="pointer-events-none absolute inset-0 z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.15)_50%),linear-gradient(90deg,rgba(255,0,0,0.04),rgba(0,255,0,0.01),rgba(0,0,255,0.04))] bg-[length:100%_3px,2px_100%]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square bg-red-900/10 blur-[80px] md:blur-[120px] rounded-full" />
@@ -118,18 +100,17 @@ const Menu = () => {
         variants={entradaTerror}
         initial="hidden"
         animate="visible"
-        // compact-margin ajusta el espacio en horizontal
-className="mb-4 sm:mb-2 md:mb-12 compact-margin z-10"      >
+        className="mb-8 md:mb-12 compact-logo z-10"
+      >
         <img 
           src={LogoIntrusion} 
           alt="INTRUSION LOGO" 
-          // compact-logo reduce el tamaño si la pantalla es muy bajita
-className="w-auto h-[6vh] sm:h-[7vh] md:h-[100px] lg:h-[140px] compact-logo object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"     />
+          className="w-auto h-[40px] sm:h-[45px] md:h-[100px] lg:h-[140px] object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"
+        />
       </motion.div>
 
       {/* Navegación */}
-      {/* Reducimos el space-y en tablets/móviles para que quepa todo */}
-      <nav className="space-y-3 sm:space-y-2 md:space-y-6 relative z-10 w-full md:w-auto font-elite">
+      <nav className="space-y-4 md:space-y-6 compact-nav relative z-10 w-full md:w-auto font-elite">
         {menuItems.map((item, index) => (
           <Link to={item.path} key={item.id} className="block no-underline">
             <motion.div
@@ -142,29 +123,19 @@ className="w-auto h-[6vh] sm:h-[7vh] md:h-[100px] lg:h-[140px] compact-logo obje
               className="group cursor-pointer"
             >
               <div className="flex items-center space-x-3 md:space-x-4">
-                <span
-                  className={`h-[1px] md:h-[2px] transition-all duration-500 bg-red-700 ${activeItem === item.id ? "w-8 md:w-12" : "w-0"}`}
-                />
-                <h2
-                  className={`text-lg sm:text-base md:text-3xl transition-colors duration-300 uppercase tracking-tighter ${
-                    activeItem === item.id
-                      ? "text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.4)]"
-                      : "text-zinc-500"
-                  }`}
-                >
+                <span className={`h-[1px] md:h-[2px] transition-all duration-500 bg-red-700 ${activeItem === item.id ? "w-8 md:w-12" : "w-0"}`} />
+                <h2 className={`text-xl md:text-3xl compact-item transition-colors duration-300 uppercase tracking-tighter ${activeItem === item.id ? "text-red-500" : "text-zinc-500"}`}>
                   {item.label}
                 </h2>
               </div>
-
-              {/* Reducimos la altura del contenedor de descripción en pantallas pequeñas */}
-              <div className="h-3 sm:h-4 md:h-6">
+              <div className="h-4 md:h-6 compact-desc">
                 <AnimatePresence>
                   {activeItem === item.id && (
                     <motion.p
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0 }}
-                      className="text-[9px] sm:text-[8px] md:text-xs text-zinc-600 ml-11 sm:ml-12 md:ml-16 uppercase tracking-widest italic"
+                      className="text-[10px] md:text-xs text-zinc-600 ml-11 md:ml-16 uppercase tracking-widest italic"
                     >
                       {item.desc}
                     </motion.p>
