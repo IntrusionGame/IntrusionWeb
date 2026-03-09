@@ -142,7 +142,7 @@ const TranscripcionIncidente = () => {
             whileHover={{ x: -5 }} 
             className="flex items-center gap-2 text-zinc-700 hover:text-red-700 transition-colors cursor-pointer group"
           >
-            <span className="text-[9px] md:text-xs tracking-widest uppercase italic">RAÍZ</span>
+            <span className="text-[9px] md:text-xs tracking-widest uppercase italic">SISTEMA RAÍZ</span>
           </Motion.div>
         </Link>
       </div>
@@ -156,9 +156,9 @@ const TranscripcionIncidente = () => {
       >
         <Motion.header variants={itemVariants} className="border-b border-red-900/30 pb-6 md:pb-8 mb-10 md:mb-12">
           {/* AJUSTE: Título responsivo text-3xl en móvil */}
-          <h1 className="text-3xl md:text-5xl font-glitch text-red-700 uppercase mb-4 tracking-tighter leading-tight">
-            {incidente.titulo}
-          </h1>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-glitch text-red-700 uppercase mb-4 tracking-tighter leading-[1.1]">
+    {incidente.titulo}
+  </h1>
           <div className="flex flex-wrap gap-2 md:gap-4 text-[9px] md:text-[10px] tracking-widest uppercase text-zinc-500">
             <span className="flex items-center gap-2 border border-red-900/40 px-2 py-1">
               <FaFileContract className="text-red-700" /> {incidente.clasificacion}

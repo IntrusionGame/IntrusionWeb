@@ -66,17 +66,24 @@ const Menu = () => {
   };
 
   return (
-    /* CAMBIO ESTRATÉGICO: 
-       - Móvil: justify-center (como estaba)
-       - Tablet (sm): justify-start para que no se corte la Bitácora
-       - Escritorio (md): vuelve a justify-center
+    /* CAMBIO ESTRATÉGICO PARA TABLET HORIZONTAL: 
+       - Usamos 'items-center' en lugar de 'items-start' en móviles si quieres, 
+         pero para respetar tu diseño de izquierda mantengo el pl-X.
+       - La clave es 'justify-center' pero con un 'pt' (padding top) controlado en pantallas cortas.
     */
-    <div className="fixed inset-0 w-screen h-screen bg-black overflow-hidden flex flex-col justify-center sm:justify-start md:justify-center items-start pl-8 sm:pl-12 md:pl-20 lg:pl-32 select-none">
+    <div className="fixed inset-0 w-screen h-screen bg-black overflow-hidden flex flex-col justify-center items-start pl-8 sm:pl-12 md:pl-20 lg:pl-32 select-none">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Special+Elite&display=swap');
           .font-glitch { font-family: 'Rubik Glitch', system-ui; }
           .font-elite { font-family: 'Special Elite', serif; }
+
+          /* Ajuste para pantallas con poca altura (Tablet Horizontal / iPhone Landscape) */
+          @media (max-height: 500px) {
+            .compact-nav { space-y: 1 !important; }
+            .compact-margin { margin-bottom: 1rem !important; }
+            .compact-logo { height: 40px !important; }
+          }
         `}
       </style>
 
@@ -90,19 +97,20 @@ const Menu = () => {
         variants={entradaTerror}
         initial="hidden"
         animate="visible"
-        // En tablet (sm) damos un padding top y bajamos el margen para ganar espacio
-        className="mb-8 sm:mb-4 md:mb-12 z-10 pt-0 sm:pt-16 md:pt-0"
+        // compact-margin ajusta el espacio en horizontal
+        className="mb-6 sm:mb-4 md:mb-12 compact-margin z-10"
       >
         <img 
-  src={LogoIntrusion} 
-  alt="INTRUSION LOGO" 
-
-  className="w-auto h-[45px] sm:h-[50px] md:h-[100px] lg:h-[140px] object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"
-/>
+          src={LogoIntrusion} 
+          alt="INTRUSION LOGO" 
+          // compact-logo reduce el tamaño si la pantalla es muy bajita
+          className="w-auto h-[40px] sm:h-[45px] md:h-[100px] lg:h-[140px] compact-logo object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"
+        />
       </motion.div>
 
       {/* Navegación */}
-      <nav className="space-y-4 sm:space-y-2 md:space-y-6 relative z-10 w-full md:w-auto font-elite">
+      {/* Reducimos el space-y en tablets/móviles para que quepa todo */}
+      <nav className="space-y-3 sm:space-y-2 md:space-y-6 relative z-10 w-full md:w-auto font-elite">
         {menuItems.map((item, index) => (
           <Link to={item.path} key={item.id} className="block no-underline">
             <motion.div
@@ -119,7 +127,7 @@ const Menu = () => {
                   className={`h-[1px] md:h-[2px] transition-all duration-500 bg-red-700 ${activeItem === item.id ? "w-8 md:w-12" : "w-0"}`}
                 />
                 <h2
-                  className={`text-xl sm:text-lg md:text-3xl transition-colors duration-300 uppercase tracking-tighter ${
+                  className={`text-lg sm:text-base md:text-3xl transition-colors duration-300 uppercase tracking-tighter ${
                     activeItem === item.id
                       ? "text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.4)]"
                       : "text-zinc-500"
@@ -129,14 +137,15 @@ const Menu = () => {
                 </h2>
               </div>
 
-              <div className="h-4 md:h-6">
+              {/* Reducimos la altura del contenedor de descripción en pantallas pequeñas */}
+              <div className="h-3 sm:h-4 md:h-6">
                 <AnimatePresence>
                   {activeItem === item.id && (
                     <motion.p
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0 }}
-                      className="text-[10px] sm:text-[9px] md:text-xs text-zinc-600 ml-11 sm:ml-12 md:ml-16 uppercase tracking-widest italic"
+                      className="text-[9px] sm:text-[8px] md:text-xs text-zinc-600 ml-11 sm:ml-12 md:ml-16 uppercase tracking-widest italic"
                     >
                       {item.desc}
                     </motion.p>
