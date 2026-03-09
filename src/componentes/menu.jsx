@@ -58,30 +58,30 @@ const Menu = () => {
  const entradaTerror = {
     hidden: { 
       opacity: 0, 
-      x: -20, 
+      x: -15, 
       skewX: 0, 
-      filter: "blur(10px) brightness(2)" 
+      filter: "blur(15px) brightness(0)" 
     },
     visible: {
-      /* Opacidad nerviosa: parpadeos rápidos y secos */
-      opacity: [0, 1, 0, 0.8, 0.2, 1],
-      /* Movimiento de 'Glitch' puro: saltos pequeños y asimétricos */
-      x: [0, -40, 30, -10, 5, 0],
-      /* Skew agresivo: distorsiona la forma solo en frames específicos */
-      skewX: [0, 40, -30, 10, 0, 0],
-      /* Blur dinámico: el texto se enfoca y desenfoca violentamente */
+      /* Parpadeo más lento y agónico */
+      opacity: [0, 0.8, 0.2, 1, 0.7, 1],
+      /* Saltos más controlados para que se vea el desplazamiento */
+      x: [0, -20, 15, -5, 2, 0],
+      /* El skew ahora es un impacto inicial que se recupera */
+      skewX: [0, 25, -15, 5, 0, 0],
+      /* El brillo y el desenfoque ahora duran lo suficiente para dar atmósfera */
       filter: [
-        "blur(12px) brightness(3)", 
-        "blur(0px) brightness(1)", 
-        "blur(8px) brightness(2)", 
-        "blur(0px) brightness(1.5)", 
-        "blur(2px) brightness(1)", 
+        "blur(10px) brightness(0)", 
+        "blur(2px) brightness(1.5)", 
+        "blur(8px) brightness(0.5)", 
+        "blur(0px) brightness(1.2)", 
+        "blur(1px) brightness(1)", 
         "blur(0px) brightness(1)"
       ],
       transition: { 
-        duration: 0.5, // Más rápido para que sea un impacto
-        times: [0, 0.1, 0.15, 0.2, 0.4, 1], // Tiempos irregulares para evitar el ritmo de "baile"
-        ease: "linear" // 'linear' funciona mejor para glitches que 'easeInOut'
+        duration: 1.2, // Aumentado para que se aprecie el efecto
+        times: [0, 0.2, 0.4, 0.6, 0.8, 1], // Distribución uniforme para que no sea un flash instantáneo
+        ease: "anticipate" // 'anticipate' le da un peso más orgánico al inicio
       },
     },
   };;
@@ -124,7 +124,7 @@ className="mb-4 sm:mb-2 md:mb-12 compact-margin z-10"      >
           src={LogoIntrusion} 
           alt="INTRUSION LOGO" 
           // compact-logo reduce el tamaño si la pantalla es muy bajita
-className="w-auto h-[35px] sm:h-[40px] md:h-[100px] lg:h-[140px] compact-logo object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"        />
+className="w-auto h-[6vh] sm:h-[7vh] md:h-[100px] lg:h-[140px] compact-logo object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"     />
       </motion.div>
 
       {/* Navegación */}
