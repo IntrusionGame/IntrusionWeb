@@ -26,6 +26,16 @@ const Juego = () => {
     /* AJUSTE RESPONSIVE: Cambiamos fixed por absolute o aseguramos que el h-screen sea real para iOS */
     <div className="fixed inset-0 w-full h-full bg-black overflow-y-auto overflow-x-hidden custom-scrollbar font-elite text-zinc-400 select-none">
       
+      <style>
+        {`
+          .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+          .custom-scrollbar::-webkit-scrollbar-track { background: #000; }
+          .custom-scrollbar::-webkit-scrollbar-thumb { background: #450a0a; border: 1px solid #000; }
+          .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #7f1d1d; }
+          .custom-scrollbar { scrollbar-width: thin; scrollbar-color: #450a0a #000; }
+        `}
+      </style>
+      
       {/* SCANLINE Y EFECTOS DE FONDO - Pointer events none para no bloquear el scroll en móvil */}
       <div className="fixed inset-0 pointer-events-none z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.02),rgba(0,255,0,0.01),rgba(0,0,255,0.02))] bg-[length:100%_4px,4px_100%]" />
       

@@ -55,23 +55,36 @@ const Menu = () => {
   ];
 
   const entradaTerror = {
-    hidden: { opacity: 0, x: -15, filter: "blur(15px) brightness(0)" },
+    hidden: { 
+      opacity: 0, 
+      scale: 1.8, // Empieza demasiado grande, como si estuviera pegado a la "cámara"
+      filter: "blur(20px) brightness(0) contrast(200%)",
+    },
     visible: {
-      opacity: [0, 0.8, 0.2, 1, 0.7, 1],
-      x: [0, -20, 15, -5, 2, 0],
-      skewX: [0, 25, -15, 5, 0, 0],
+      opacity: [0, 1, 0.1, 1, 0, 0.9, 1],
+      // Saltos de posición agresivos y cortos (glitch de posición)
+      x: [0, -40, 40, -10, 20, -5, 0],
+      y: [0, 10, -15, 5, -20, 0, 0],
+      // Cambios de escala súbitos para dar sensación de que algo se acerca
+      scale: [1.5, 1, 1.2, 0.95, 1.05, 1],
+      // Skew extremo solo en frames cortos para deformar el logo
+      skewX: [0, -50, 50, -20, 0],
       filter: [
-        "blur(10px) brightness(0)", 
-        "blur(2px) brightness(1.5)", 
-        "blur(8px) brightness(0.5)", 
-        "blur(0px) brightness(1.2)", 
-        "blur(1px) brightness(1)", 
+        "blur(20px) brightness(0)", 
+        "blur(0px) brightness(3) contrast(150%)", // Flash violento
+        "blur(15px) brightness(0.2)", 
+        "blur(2px) brightness(2)", 
+        "blur(10px) brightness(0.5)",
+        "blur(0px) brightness(1.2)",
         "blur(0px) brightness(1)"
       ],
-      transition: { duration: 1.2, times: [0, 0.2, 0.4, 0.6, 0.8, 1], ease: "anticipate" },
+      transition: { 
+        duration: 0.7, // Más rápido para que sea un impacto, no un baile
+        times: [0, 0.05, 0.1, 0.2, 0.3, 0.45, 1], // Tiempos irregulares = Movimiento errático
+        ease: "linear" // IMPORTANTE: Sin suavizado, el terror es seco y cortante
+      },
     },
   };
-
   return (
     <div className="fixed inset-0 w-screen h-screen bg-black overflow-hidden select-none font-elite">
       <style>
@@ -87,19 +100,30 @@ const Menu = () => {
             padding-left: 8%;
           }
 
-          /* PARCHE EXCLUSIVO: SOLO TABLETS EN HORIZONTAL */
+         /* PARCHE EXCLUSIVO: TABLETS EN HORIZONTAL - UN DEDO MÁS GRANDE */
           @media (orientation: landscape) and (max-height: 700px) and (max-width: 1300px) {
             .main-grid { 
               display: grid !important;
               grid-template-rows: auto 1fr;
-              padding-top: 5vh !important;
+              padding-top: 3vh !important; /* Subimos un poco el contenido */
               justify-content: start !important;
             }
-            .logo-wrap { max-height: 60px !important; margin-bottom: 1rem !important; }
-            .logo-img { height: 45px !important; }
-            .nav-wrap { gap: 0.3rem !important; }
-            .menu-text { font-size: 1.1rem !important; }
-            .desc-container { display: none !important; }
+            .logo-wrap { 
+              max-height: 85px !important; /* Más espacio para el logo */
+              margin-bottom: 1.2rem !important; 
+            }
+            .logo-img { 
+              height: 65px !important; /* El logo crece "un dedo" */
+            }
+            .nav-wrap { 
+              gap: 0.6rem !important; /* Más aire entre botones */
+            }
+            .menu-text { 
+              font-size: 1.4rem !important; /* Letra un poco más grande y legible */
+            }
+            .desc-container { 
+              display: none !important; 
+            }
           }
         `}
       </style>

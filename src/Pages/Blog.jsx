@@ -129,17 +129,18 @@ const Bitacora = () => {
         </section>
 
         {/* --- NUEVA PAGINACIÓN (Respetando estética y textos originales) --- */}
-        <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 font-elite">
+        {/* --- PAGINACIÓN: FORZADA A SUBIR --- */}
+        <div className="relative -mt-16 md:mt-12 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-8 font-elite z-10">
           <button
             onClick={() => setPaginaActual(p => Math.max(1, p - 1))}
             disabled={paginaActual === 1}
-            /* AJUSTE: texto responsivo para evitar desborde lateral */
-            className={`text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase transition-all flex items-center gap-2 ${paginaActual === 1 ? "opacity-5" : "text-zinc-700 hover:text-red-700"}`}
+            /* Reducimos tracking al mínimo en móvil para que no ocupe ancho de más */
+            className={`text-[9px] md:text-[10px] tracking-tight md:tracking-[0.3em] uppercase transition-all flex items-center gap-2 ${paginaActual === 1 ? "opacity-5" : "text-zinc-700 hover:text-red-700"}`}
           >
             [REBOBINAR_MEMORIA]
           </button>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 my-1 sm:my-0">
             {[...Array(totalPaginas)].map((_, i) => (
               <div 
                 key={i} 
@@ -151,15 +152,16 @@ const Bitacora = () => {
           <button
             onClick={() => setPaginaActual(p => Math.min(totalPaginas, p + 1))}
             disabled={paginaActual === totalPaginas}
-            className={`text-[9px] md:text-[10px] tracking-[0.2em] md:tracking-[0.3em] uppercase transition-all flex items-center gap-2 ${paginaActual === totalPaginas ? "opacity-5" : "text-zinc-700 hover:text-red-700 animate-pulse"}`}
+            className={`text-[9px] md:text-[10px] tracking-tight md:tracking-[0.3em] uppercase transition-all flex items-center gap-2 ${paginaActual === totalPaginas ? "opacity-5" : "text-zinc-700 hover:text-red-700 animate-pulse"}`}
           >
             [RASTREAR_MÁS_ERRORES]
           </button>
         </div>
 
-        <footer className="mt-20 pt-8 border-t border-zinc-900 flex flex-col items-center gap-4">
-          <FaSkull className="text-zinc-900 text-2xl md:text-3xl" />
-          <p className="text-[8px] md:text-[9px] text-zinc-700 uppercase tracking-[0.3em] md:tracking-[0.5em] text-center px-4">
+        {/* --- FOOTER: COMPACTADO PARA SUBIR EL BLOQUE ANTERIOR --- */}
+        <footer className="mt-8 md:mt-20 pt-4 border-t border-zinc-900 flex flex-col items-center gap-3 pb-20 md:pb-10">
+          <FaSkull className="text-zinc-900 text-xl md:text-3xl" />
+          <p className="text-[8px] md:text-[9px] text-zinc-800 uppercase tracking-[0.2em] md:tracking-[0.5em] text-center px-6 max-w-[300px]">
             Si puedes leer esto, ya es demasiado tarde para el Sujeto_00.
           </p>
         </footer>
