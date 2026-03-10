@@ -11,7 +11,7 @@ export const incidentesData = {
   240226: {
     titulo: "PROTOCOLO_24022026.log",
     fecha: "2026-02-24 // 00:30 PM",
-    clasificacion: "NIVEL_OMEGA-ROJO",
+    clasificacion: "ESTADO: PARADOJA_SENSORIAL",
     contenido: [
       {
         tipo: "titulo",
@@ -51,7 +51,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Los programadores hoy se han dedicado a hacer sus diferentes partes del videojuego como enemigo, contraseña y añadir la ficha técnica.",
+        texto: "Los programadores hoy se han dedicado a hacer sus diferentes partes del videojuego, como el enemigo, la contraseña y añadir la ficha técnica.",
       },
       {
         tipo: "subtitulo",
@@ -93,7 +93,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Hoy he terminado la primera versión de la mecánica del keyPad de la puerta del sótano, que cuando le das te abre un canvas que si aciertas te abre la puerta y si no te da otra oportunidad.",
+        texto: "Hoy he terminado la primera versión de la mecánica del keypad de la puerta del sótano; cuando le das, te abre un canvas que, si aciertas, te abre la puerta y, si no, te da otra oportunidad.",
       },
       {
         tipo: "imagen",
@@ -106,7 +106,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Ha creado el movimiento y cámara del jugador.",
+        texto: "Ha creado el movimiento y la cámara del jugador.",
       },
       {
         tipo: "imagen",
@@ -119,7 +119,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "El Jefe se encargó de que el enlace funcione correctamente, mejoró el apartado del blog, añadió el logo y favicon que le pasaron ayer desde diseño, por último creó la página de juego, también creó la cuenta oficial del videojuego.",
+        texto: "El jefe se encargó de que el enlace funcione correctamente, mejoró el apartado del blog, añadió el logo y favicon que le pasaron ayer desde diseño; por último, creó la página de juego y también creó la cuenta oficial del videojuego.",
       },
     ],
   },

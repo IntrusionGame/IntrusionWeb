@@ -1,4 +1,3 @@
-
 import Directorio from "../../Imagenes/Blog/Dia_09_Marzo/Merge.png";
 import Lowpoli1 from "../../Imagenes/Blog/Dia_09_Marzo/Lowpoli1.png"
 import Lowpoli2 from "../../Imagenes/Blog/Dia_09_Marzo/Lowpoli2.png"
@@ -18,17 +17,17 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "La jefa de diseño siguio con el modelado de props (lowpoly) para el juego.",
+        texto: "La jefa de diseño siguió con el modelado de props (lowpoly) para el juego.",
       },
       {
         tipo: "imagen",
         src: Lowpoli1,
-        caption: "CAPTURA_SISTEMA: Manifestación del diseño del lowpoli en color.",
+        caption: "CAPTURA_SISTEMA: Manifestación del diseño del lowpoly en color.",
       },
       {
         tipo: "imagen",
         src: Lowpoli2,
-        caption: "CAPTURA_SISTEMA: Manifestación del diseño del lowpoli en color.",
+        caption: "CAPTURA_SISTEMA: Manifestación del diseño del lowpoly en color.",
       },
       {
         tipo: "parrafo",
@@ -36,7 +35,7 @@ export const incidentesData = {
       },
       {
         tipo: "imagen",
-        src: Lowpoli3,
+        src: Lowpoli3, 
         caption: "CAPTURA_SISTEMA: Manifestación del blockout de la casa.",
       },
       {
@@ -55,7 +54,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Los programadores se reunieron con la profesora para hablar de como iban con el videojuego.",
+        texto: "Los programadores se reunieron con la profesora para hablar de cómo iban con el videojuego.",
       },
       {
         tipo: "subtitulo",
@@ -63,7 +62,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Intento solucionar el enemigo que le fallaba las animaciones.",
+        texto: "Intentó solucionar el enemigo que le fallaba las animaciones.",
       },
       {
         tipo: "subtitulo",
@@ -71,7 +70,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Ayudo a Soriano con la realizacion del enemigo ya que le fallaba las animaciones.",
+        texto: "Ayudó a Soriano con la realización del enemigo ya que le fallaban las animaciones.",
       },
       {
         tipo: "subtitulo",
@@ -79,7 +78,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Ayudo al resto de compañeros haciendo merge del proyecto.",
+        texto: "Ayudó al resto de compañeros haciendo merge del proyecto.",
       },
       {
         tipo: "subtitulo",
@@ -116,7 +115,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Se encargo de realizar el resposive en movil y tablet de la web ya que habia apartados que no eran eso.",
+        texto: "Se encargó de realizar el responsive en móvil y tablet de la web ya que había apartados que no eran eso.",
       },
     ],
   },

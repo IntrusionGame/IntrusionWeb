@@ -100,44 +100,45 @@ const Menu = () => {
             padding-left: 8%;
           }
 
-         /* PARCHE EXCLUSIVO: TABLETS EN HORIZONTAL - MÁS ARRIBA Y CENTRADO */
+       /* PARCHE EXCLUSIVO: TABLETS EN HORIZONTAL - ESTILO ORIGINAL PERO MÁS ARRIBA */
 @media (orientation: landscape) and (max-height: 700px) and (max-width: 1300px) {
   .main-grid { 
-    display: flex !important; /* Cambiamos a flex para centrar mejor el bloque entero */
+    display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important; /* Centrado vertical del grupo */
-    align-items: center !important;    /* Centrado horizontal absoluto */
-    padding-top: 1vh !important;       /* Subimos casi al borde superior */
-    min-height: 100vh !important;
-    width: 100% !important;
+    justify-content: center !important; 
+    height: 100vh !important;
+    padding-left: 8% !important;
+    /* Subimos el bloque entero un dedo (aprox 40-50px) */
+    margin-top: -5vh !important; 
   }
   
   .logo-wrap { 
     max-height: 90px !important; 
-    margin-bottom: 1rem !important; 
+    margin-bottom: 1.5rem !important; /* Espacio para que respire el logo */
     display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
+    justify-content: flex-start !important; /* Alineado a la izquierda como el original */
   }
   
   .logo-img { 
-    height: 70px !important; /* Un poco más de presencia */
+    height: 75px !important; /* Logo un dedo más grande */
     object-fit: contain !important;
   }
   
   .nav-wrap { 
-    gap: 0.8rem !important; 
-    align-items: center !important; /* Asegura que los botones se alineen al centro */
-    width: 100% !important;
+    gap: 0.7rem !important; /* Espaciado entre botones */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
   
   .menu-text { 
-    font-size: 1.5rem !important; 
-    text-align: center !important;
+    font-size: 1.6rem !important; /* Texto grande y potente */
+    text-align: left !important;
+    line-height: 1.2 !important;
   }
   
   .desc-container { 
-    display: none !important; 
+    display: none !important; /* Eliminamos descripción para ganar espacio vertical */
   }
 }
         `}

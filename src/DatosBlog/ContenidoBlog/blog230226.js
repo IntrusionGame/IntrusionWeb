@@ -8,7 +8,7 @@ export const incidentesData = {
   230226: {
     titulo: "PROTOCOLO_23022026.log",
     fecha: "2026-02-23 // 03:34 AM",
-    clasificacion: "NIVEL_OMEGA-ROJO",
+    clasificacion: "SUJETO: ORIGEN-ZERO",
     contenido: [
       {
         tipo: "titulo",
@@ -16,7 +16,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "La jefa de diseño se encargó de hacer el logo como el favicon.",
+        texto: "La jefa de diseño se encargó de hacer tanto el logo como el favicon.",
       },
       {
         tipo: "imagen",
@@ -38,7 +38,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "El jefe de UI se encargó de hacer el diseño de cómo será el menú principal apoyándose en lo que le comentaban desde diseño.",
+        texto: "El jefe de UI se encargó de hacer el diseño de cómo será el menú principal, apoyándose en lo que le comentaban desde diseño.",
       },
       {
         tipo: "imagen",
@@ -51,7 +51,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Los programadores se encargaron de hacer el repositorio para el videojuego, a continuación se indicará qué ha realizado cada programador.",
+        texto: "Los programadores se encargaron de hacer el repositorio para el videojuego; a continuación se indicará qué ha realizado cada programador.",
       },
       {
         tipo: "subtitulo",
@@ -59,11 +59,11 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Crear ramas: feature-enemigo / feature-perro y subir tabla de mecánicas LA CUAL HAY QUE RELLENAR al drive.",
+        texto: "Crear ramas: feature-enemigo / feature-perro y subir tabla de mecánicas LA CUAL HAY QUE RELLENAR al Drive.",
       },
       {
         tipo: "subtitulo",
-        texto: "Victor Hugo",
+        texto: "Víctor Hugo",
       },
       {
         tipo: "parrafo",
@@ -87,7 +87,7 @@ export const incidentesData = {
       },
       {
         tipo: "subtitulo",
-        texto: "Adrian",
+        texto: "Adrián",
       },
       {
         tipo: "parrafo",
@@ -117,7 +117,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "El jefe de web se encargo de hacer la pagina del blog con sus contenidos, mas retocar cosas de formato responsive.",
+        texto: "El jefe de web se encargó de hacer la página del blog con sus contenidos, más retocar cosas de formato responsive.",
       },
     ],
   },
