@@ -129,7 +129,6 @@ const Bitacora = () => {
         </section>
 
         {/* --- NUEVA PAGINACIÓN (Respetando estética y textos originales) --- */}
-        {/* --- PAGINACIÓN: FORZADA A SUBIR --- */}
         <div className="relative -mt-16 md:mt-12 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-8 font-elite z-10">
           <button
             onClick={() => setPaginaActual(p => Math.max(1, p - 1))}
@@ -161,8 +160,7 @@ const Bitacora = () => {
         {/* --- FOOTER: COMPACTADO PARA SUBIR EL BLOQUE ANTERIOR --- */}
         <footer className="mt-8 md:mt-20 pt-4 border-t border-zinc-900 flex flex-col items-center gap-3 pb-20 md:pb-10">
           <FaSkull className="text-zinc-900 text-xl md:text-3xl" />
-          <p className="text-[8px] md:text-[9px] text-zinc-800 uppercase tracking-[0.2em] md:tracking-[0.5em] text-center px-6 max-w-[300px]">
-            Si puedes leer esto, ya es demasiado tarde para el Sujeto_00.
+<p className="text-[8px] md:text-[10px] text-zinc-800 uppercase tracking-[0.2em] md:tracking-[0.4em] text-center px-6 max-w-[300px] md:max-w-[600px] leading-relaxed">            Si puedes leer esto, ya es demasiado tarde para el Sujeto_00.
           </p>
         </footer>
       </div>

@@ -100,31 +100,46 @@ const Menu = () => {
             padding-left: 8%;
           }
 
-         /* PARCHE EXCLUSIVO: TABLETS EN HORIZONTAL - UN DEDO MÁS GRANDE */
-          @media (orientation: landscape) and (max-height: 700px) and (max-width: 1300px) {
-            .main-grid { 
-              display: grid !important;
-              grid-template-rows: auto 1fr;
-              padding-top: 3vh !important; /* Subimos un poco el contenido */
-              justify-content: start !important;
-            }
-            .logo-wrap { 
-              max-height: 85px !important; /* Más espacio para el logo */
-              margin-bottom: 1.2rem !important; 
-            }
-            .logo-img { 
-              height: 65px !important; /* El logo crece "un dedo" */
-            }
-            .nav-wrap { 
-              gap: 0.6rem !important; /* Más aire entre botones */
-            }
-            .menu-text { 
-              font-size: 1.4rem !important; /* Letra un poco más grande y legible */
-            }
-            .desc-container { 
-              display: none !important; 
-            }
-          }
+         /* PARCHE EXCLUSIVO: TABLETS EN HORIZONTAL - MÁS ARRIBA Y CENTRADO */
+@media (orientation: landscape) and (max-height: 700px) and (max-width: 1300px) {
+  .main-grid { 
+    display: flex !important; /* Cambiamos a flex para centrar mejor el bloque entero */
+    flex-direction: column !important;
+    justify-content: center !important; /* Centrado vertical del grupo */
+    align-items: center !important;    /* Centrado horizontal absoluto */
+    padding-top: 1vh !important;       /* Subimos casi al borde superior */
+    min-height: 100vh !important;
+    width: 100% !important;
+  }
+  
+  .logo-wrap { 
+    max-height: 90px !important; 
+    margin-bottom: 1rem !important; 
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  
+  .logo-img { 
+    height: 70px !important; /* Un poco más de presencia */
+    object-fit: contain !important;
+  }
+  
+  .nav-wrap { 
+    gap: 0.8rem !important; 
+    align-items: center !important; /* Asegura que los botones se alineen al centro */
+    width: 100% !important;
+  }
+  
+  .menu-text { 
+    font-size: 1.5rem !important; 
+    text-align: center !important;
+  }
+  
+  .desc-container { 
+    display: none !important; 
+  }
+}
         `}
       </style>
 
