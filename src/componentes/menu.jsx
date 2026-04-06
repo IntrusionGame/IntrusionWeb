@@ -100,7 +100,7 @@ const Menu = () => {
             padding-left: 8%;
           }
 
-       /* PARCHE EXCLUSIVO: TABLETS EN HORIZONTAL - ESTILO ORIGINAL PERO MÁS ARRIBA */
+      /* PARCHE EXCLUSIVO: TABLETS EN HORIZONTAL - ESTILO ORIGINAL PERO MÁS ARRIBA */
 @media (orientation: landscape) and (max-height: 700px) and (max-width: 1300px) {
   .main-grid { 
     display: flex !important;
@@ -108,37 +108,39 @@ const Menu = () => {
     justify-content: center !important; 
     height: 100vh !important;
     padding-left: 8% !important;
-    /* Subimos el bloque entero un dedo (aprox 40-50px) */
-    margin-top: -5vh !important; 
+    /* Elevamos el bloque entero un poco más */
+    margin-top: -10vh !important; 
   }
   
   .logo-wrap { 
-    max-height: 90px !important; 
-    margin-bottom: 1.5rem !important; /* Espacio para que respire el logo */
+    max-height: 110px !important; /* Más margen para el logo grande */
+    margin-bottom: 2.5rem !important; /* Más espacio antes de los botones */
     display: flex !important;
-    justify-content: flex-start !important; /* Alineado a la izquierda como el original */
+    justify-content: flex-start !important; 
   }
   
   .logo-img { 
-    height: 75px !important; /* Logo un dedo más grande */
+    height: 95px !important; /* Logo un dedo más grande (subido de 75px) */
     object-fit: contain !important;
   }
   
   .nav-wrap { 
-    gap: 0.7rem !important; /* Espaciado entre botones */
+    /* Aumentamos el espacio entre Iniciar Ritual, Expedientes, etc. */
+    gap: 1.5rem !important; 
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
   }
   
   .menu-text { 
-    font-size: 1.6rem !important; /* Texto grande y potente */
+    font-size: 1.8rem !important; /* Un pelín más grande para acompañar al logo */
     text-align: left !important;
     line-height: 1.2 !important;
+    letter-spacing: 1px;
   }
   
   .desc-container { 
-    display: none !important; /* Eliminamos descripción para ganar espacio vertical */
+    display: none !important; 
   }
 }
         `}
