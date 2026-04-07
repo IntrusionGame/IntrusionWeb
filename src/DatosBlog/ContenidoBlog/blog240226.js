@@ -15,11 +15,11 @@ export const incidentesData = {
     contenido: [
       {
         tipo: "titulo",
-        texto: "Diseño.",
+        texto: "Diseño",
       },
       {
         tipo: "parrafo",
-        texto: "Inicio de blockout y modelado de props (lowpoly) para el juego.",
+        texto: "Inicio del blockout y modelado de props (low poly) para el videojuego.",
       },
       {
         tipo: "imagen",
@@ -33,7 +33,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "El resto de diseñadores están trabajando en el blockout del resto de las habitaciones.",
+        texto: "El equipo de diseño continúa trabajando en el blockout de las demás habitaciones.",
       },
       {
         tipo: "imagen",
@@ -51,7 +51,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Los programadores hoy se han dedicado a hacer sus diferentes partes del videojuego, como el enemigo, la contraseña y añadir la ficha técnica.",
+        texto: "El equipo de programación se ha centrado en el desarrollo de mecánicas clave, como el sistema del enemigo, el keypad de seguridad y la integración de la ficha técnica.",
       },
       {
         tipo: "subtitulo",
@@ -59,7 +59,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Añadió el enemigo con su collider, sus animaciones y el código para que funcione.",
+        texto: "Implementó al enemigo configurando su collider, animaciones y la lógica de programación necesaria.",
       },
       {
         tipo: "imagen",
@@ -72,7 +72,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Esperar a que le resuelvan dudas y mejora el canal de Discord.",
+        texto: "Resolución de dudas técnicas y optimización del canal oficial de Discord.",
       },
       {
         tipo: "subtitulo",
@@ -80,7 +80,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Ha documentado una mecánica importante para el videojuego.",
+        texto: "Documentación técnica de una mecánica integral para el desarrollo del juego.",
       },
       {
         tipo: "imagen",
@@ -93,12 +93,12 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Hoy he terminado la primera versión de la mecánica del keypad de la puerta del sótano; cuando le das, te abre un canvas que, si aciertas, te abre la puerta y, si no, te da otra oportunidad.",
+        texto: "Finalizada la primera iteración del keypad para la puerta del sótano; el sistema despliega un canvas interactivo que valida la contraseña para permitir el acceso.",
       },
       {
         tipo: "imagen",
         src: Key,
-        caption: "CAPTURA_SISTEMA: Manifestación de la llave.",
+        caption: "CAPTURA_SISTEMA: Manifestación de la interfaz del keypad.",
       },
       {
         tipo: "subtitulo",
@@ -106,7 +106,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Ha creado el movimiento y la cámara del jugador.",
+        texto: "Desarrolló el sistema de movimiento y el control de cámara del jugador.",
       },
       {
         tipo: "imagen",
@@ -115,11 +115,11 @@ export const incidentesData = {
       },
       {
         tipo: "titulo",
-        texto: "Web.",
+        texto: "Web",
       },
       {
         tipo: "parrafo",
-        texto: "El jefe se encargó de que el enlace funcione correctamente, mejoró el apartado del blog, añadió el logo y favicon que le pasaron ayer desde diseño; por último, creó la página de juego y también creó la cuenta oficial del videojuego.",
+        texto: "El responsable web verificó la integridad de los enlaces, optimizó el apartado del blog e integró el logo y favicon. Además, habilitó la página oficial del juego y las cuentas vinculadas.",
       },
     ],
   },

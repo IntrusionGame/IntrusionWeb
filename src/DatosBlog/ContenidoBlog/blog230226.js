@@ -12,11 +12,11 @@ export const incidentesData = {
     contenido: [
       {
         tipo: "titulo",
-        texto: "Diseño.",
+        texto: "Diseño",
       },
       {
         tipo: "parrafo",
-        texto: "La jefa de diseño se encargó de hacer tanto el logo como el favicon.",
+        texto: "La jefa de diseño se encargó de la creación tanto del logo como del favicon.",
       },
       {
         tipo: "imagen",
@@ -25,7 +25,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "El resto de diseñadores también se encargaron de hacer el diseño de la casa de manera cenital.",
+        texto: "El resto de diseñadores realizaron el diseño de la planta de la casa desde una perspectiva cenital.",
       },
       {
         tipo: "imagen",
@@ -38,7 +38,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "El jefe de UI se encargó de hacer el diseño de cómo será el menú principal, apoyándose en lo que le comentaban desde diseño.",
+        texto: "El jefe de UI desarrolló el diseño del menú principal, basándose en los conceptos proporcionados por el equipo de diseño.",
       },
       {
         tipo: "imagen",
@@ -51,7 +51,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Los programadores se encargaron de hacer el repositorio para el videojuego; a continuación se indicará qué ha realizado cada programador.",
+        texto: "El equipo de programación gestionó la creación del repositorio del videojuego. A continuación, se detalla la actividad individual de cada integrante:",
       },
       {
         tipo: "subtitulo",
@@ -59,7 +59,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Crear ramas: feature-enemigo / feature-perro y subir tabla de mecánicas LA CUAL HAY QUE RELLENAR al Drive.",
+        texto: "Creación de las ramas: feature-enemigo / feature-perro. Subida de la tabla de mecánicas (pendiente de cumplimentación) al Drive.",
       },
       {
         tipo: "subtitulo",
@@ -67,7 +67,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Revisión general del resto de compañeros y medir baldosas y paredes para el tamaño de las diferentes habitaciones.",
+        texto: "Revisión general del trabajo de los compañeros y medición de baldosas y paredes para definir el dimensionamiento de las habitaciones.",
       },
       {
         tipo: "subtitulo",
@@ -75,7 +75,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Continuar con el repositorio.",
+        texto: "Continuación y mantenimiento del repositorio.",
       },
       {
         tipo: "subtitulo",
@@ -83,7 +83,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Crear rama feature-interaccion y programación de la interacción con objetos.",
+        texto: "Creación de la rama feature-interacción y programación del sistema de interacción con objetos.",
       },
       {
         tipo: "subtitulo",
@@ -91,7 +91,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Crear su rama y programación del código de la puerta.",
+        texto: "Creación de rama propia y desarrollo de la lógica de programación para las puertas.",
       },
       {
         tipo: "subtitulo",
@@ -99,7 +99,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Crear su rama y programación del movimiento del personaje.",
+        texto: "Creación de rama propia y desarrollo de la programación del movimiento del personaje.",
       },
       {
         tipo: "imagen",
@@ -113,11 +113,11 @@ export const incidentesData = {
       },
       {
         tipo: "titulo",
-        texto: "Web.",
+        texto: "Web",
       },
       {
         tipo: "parrafo",
-        texto: "El jefe de web se encargó de hacer la página del blog con sus contenidos, más retocar cosas de formato responsive.",
+        texto: "El responsable de desarrollo web implementó la sección del blog con sus contenidos y ajustó el formato para garantizar un diseño responsive.",
       },
     ],
   },

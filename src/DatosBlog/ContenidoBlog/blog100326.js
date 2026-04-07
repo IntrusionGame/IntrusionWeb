@@ -1,7 +1,7 @@
 import Reunion from "../../Imagenes/Blog/Dia_10_Marzo/Reunion1.jpg"
 import Lowpoli101 from "../../Imagenes/Blog/Dia_10_Marzo/Lowpoli101.jpg"
 import Lowpoli102 from "../../Imagenes/Blog/Dia_10_Marzo/Lowpoli102.png"
-import Lowpoli103 from "../../Imagenes/Blog/Dia_10_Marzo/Lowpoli103.png" // Corregido el nombre de la variable aquí
+import Lowpoli103 from "../../Imagenes/Blog/Dia_10_Marzo/Lowpoli103.png"
 import prop from "../../Imagenes/Blog/Dia_10_Marzo/prop1.jpg"
 import repositorio from "../../Imagenes/Blog/Dia_10_Marzo/arregloRepositorio.png"
 
@@ -13,11 +13,11 @@ export const incidentesData = {
     contenido: [
       {
         tipo: "titulo",
-        texto: "Diseño.",
+        texto: "Diseño",
       },
       {
         tipo: "parrafo",
-        texto: "La jefa de diseño empezó con los modelados de los props e hizo la entrevista para el Instagram.",
+        texto: "La jefa de diseño comenzó con el modelado de props y realizó la entrevista para Instagram.",
       },
       {
         tipo: "imagen",
@@ -26,7 +26,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "El resto de diseñadores siguen trabajando en el blockout del resto de las habitaciones.",
+        texto: "El resto de diseñadores continúan trabajando en el blockout de las demás habitaciones.",
       },
       {
         tipo: "imagen",
@@ -41,7 +41,7 @@ export const incidentesData = {
       {
         tipo: "imagen",
         src: Lowpoli103, 
-        caption: "CAPTURA_SISTEMA: Manifestación del blockout del Baño.",
+        caption: "CAPTURA_SISTEMA: Manifestación del blockout del baño.",
       },
       {
         tipo: "titulo",
@@ -49,7 +49,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Los programadores se reunieron con la profesora para hablar de las nuevas ramas y funciones que van a desarrollar actualmente.",
+        texto: "Los programadores se reunieron con la profesora para definir las nuevas ramas y funciones que se desarrollarán actualmente.",
       },
       {
         tipo: "imagen",
@@ -62,7 +62,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Siguió buscando la solución para el enemigo, para que funcione correctamente.",
+        texto: "Siguió buscando la solución para que el sistema del enemigo funcione correctamente.",
       },
       {
         tipo: "subtitulo",
@@ -70,7 +70,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Revisó lo que había en GitHub, arregló lo que quedaba pendiente de commitear, también arregló lo del repositorio y empezó a hacer el mapa de la planta baja.",
+        texto: "Revisó el estado en GitHub, solucionó los cambios pendientes de commitear, corrigió errores en el repositorio y comenzó el mapa de la planta baja.",
       },
       {
         tipo: "subtitulo",
@@ -78,7 +78,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Creó el código para el perro, para que este sea funcional.",
+        texto: "Desarrolló el código para que el sistema del perro sea plenamente funcional.",
       },
       {
         tipo: "subtitulo",
@@ -86,7 +86,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Hoy se han distribuido las nuevas tareas a los de programación y se ha planteado cómo llevar a cabo cada tarea de manera individual mientras se resolvían los problemas con el repositorio.",
+        texto: "Se distribuyeron las nuevas tareas de programación y se planteó la ejecución individual mientras se resolvían conflictos con el repositorio.",
       },
       {
         tipo: "subtitulo",
@@ -94,7 +94,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Repartió a los integrantes del grupo de programación y asignó las nuevas tareas que hay que desarrollar.",
+        texto: "Organizó a los integrantes del equipo de programación y asignó las nuevas tareas de desarrollo.",
       },
       {
         tipo: "subtitulo",
@@ -102,28 +102,28 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Arregló fallos del repositorio.",
+        texto: "Corrigió diversos fallos críticos dentro del repositorio.",
       },
       {
         tipo: "imagen",
         src: repositorio,
-        caption: "CAPTURA_SISTEMA: Manifestación del arreglo de fallos.",
+        caption: "CAPTURA_SISTEMA: Manifestación de la resolución de conflictos.",
       },
       {
         tipo: "titulo",
-        texto: "UI.",
+        texto: "UI",
       },
       {
         tipo: "parrafo",
-        texto: "Se dedicó a pasar sus bocetos creados en Figma a Unity.",
+        texto: "Se dedicó a implementar en Unity los bocetos previamente creados en Figma.",
       },
       {
         tipo: "titulo",
-        texto: "Web / Marketing.",
+        texto: "Web / Marketing",
       },
       {
         tipo: "parrafo",
-        texto: "El programador web siguió con el diseño del responsive, también añadió la sinopsis del videojuego a la web y se reunió con la jefa de diseño para hacer una entrevista para Instagram.",
+        texto: "El programador web continuó con el diseño responsive, añadió la sinopsis oficial a la web y colaboró con la jefa de diseño en la entrevista para Instagram.",
       },
     ],
   },

@@ -10,12 +10,12 @@ export const incidentesData = {
     contenido: [
       {
         tipo: "titulo",
-        texto: "Diseño.",
+        texto: "Diseño",
       },
       {
         tipo: "parrafo",
         texto:
-          "La jefa impartio una masterclass sobre blender para mejorar los modelajes.",
+          "La jefa impartió una masterclass sobre Blender para mejorar los modelados.",
       },
       {
         tipo: "imagen",
@@ -34,7 +34,7 @@ export const incidentesData = {
       {
         tipo: "parrafo",
         texto:
-          "Los programadores se reunieron con la profesora para ver como seguir avanzando con el proyecto.",
+          "Los programadores se reunieron con la profesora para ver cómo seguir avanzando con el proyecto.",
       },
       {
         tipo: "subtitulo",
@@ -42,7 +42,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Sigue arreglando el enemigo, tambien asigno nuevas tareas y se reunio con web/marketting para la entrvista.",
+        texto: "Sigue arreglando el enemigo; también asignó nuevas tareas y se reunió con Web/Marketing para la entrevista.",
       },
       {
         tipo: "subtitulo",
@@ -51,7 +51,7 @@ export const incidentesData = {
       {
         tipo: "parrafo",
         texto:
-          "Revisar el trabajo realizado por el resto del equipo y terminar el escenario basico.",
+          "Revisó el trabajo realizado por el resto del equipo y terminó el escenario básico.",
       },
       {
         tipo: "subtitulo",
@@ -59,7 +59,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Modificar el metodo de spawn del enemigo.",
+        texto: "Modificó el método de spawn del enemigo.",
       },
       {
         tipo: "subtitulo",
@@ -67,7 +67,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Creo las nuevas ramas para seguir con el desarrollo.",
+        texto: "Creó las nuevas ramas para seguir con el desarrollo.",
       },
       {
         tipo: "subtitulo",
@@ -75,35 +75,35 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Creo las nuevas ramas para seguir con el desarrollo.",
+        texto: "Creó las nuevas ramas para seguir con el desarrollo.",
       },
       {
         tipo: "titulo",
-        texto: "UI.",
+        texto: "UI",
       },
       {
         tipo: "parrafo",
         texto:
-          "Plasmo el diseño del menu principal que realizao en Figma a Unity.",
+          "Plasmó el diseño del menú principal que realizó en Figma a Unity.",
       },
       {
         tipo: "imagen",
         src: MenuUnity,
-        caption: "CAPTURA_SISTEMA: Manifestación del menu principal en Unity.",
+        caption: "CAPTURA_SISTEMA: Manifestación del menú principal en Unity.",
       },
       {
         tipo: "titulo",
-        texto: "Web.",
+        texto: "Web",
       },
       {
         tipo: "parrafo",
         texto:
-          "Se encargó de mejorar el diseño responsive en tablet horizontal del apartado del menú, tambien hizo la personalización de itch.io.",
+          "Se encargó de mejorar el diseño responsive en tablet horizontal del apartado del menú; también realizó la personalización de Itch.io.",
       },
       {
         tipo: "imagen",
         src: itchio,
-        caption: "CAPTURA_SISTEMA: Manifestación del diseño de itch.io.",
+        caption: "CAPTURA_SISTEMA: Manifestación del diseño de Itch.io.",
       },
     ],
   },
