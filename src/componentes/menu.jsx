@@ -47,16 +47,41 @@ const Menu = () => {
   }, []);
 
   const menuItems = [
-    { id: 1, label: "INICIAR RITUAL", desc: "Comenzar la partida", path: "/juego" },
-    { id: 2, label: "EXPEDIENTES", desc: "Puzles y archivos", path: "/expedientes" },
-    { id: 3, label: "MANIFIESTO", desc: "Sobre los arquitectos de este vacío", path: "/SobreNosotros" },
-    { id: 4, label: "CANAL DE ENLACE", desc: "Establecer conexión con los arquitectos", path: "/contacto" },
-    { id: 5, label: "BITÁCORA DE FALLOS", desc: "Registros recuperados del vacío", path: "/blog" },
+    {
+      id: 1,
+      label: "INICIAR RITUAL",
+      desc: "Comenzar la partida",
+      path: "/juego",
+    },
+    {
+      id: 2,
+      label: "EXPEDIENTES",
+      desc: "Puzles y archivos",
+      path: "/expedientes",
+    },
+    {
+      id: 3,
+      label: "MANIFIESTO",
+      desc: "Sobre los arquitectos de este vacío",
+      path: "/SobreNosotros",
+    },
+    {
+      id: 4,
+      label: "CANAL DE ENLACE",
+      desc: "Establecer conexión con los arquitectos",
+      path: "/contacto",
+    },
+    {
+      id: 5,
+      label: "BITÁCORA DE FALLOS",
+      desc: "Registros recuperados del vacío",
+      path: "/blog",
+    },
   ];
 
   const entradaTerror = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       scale: 1.8, // Empieza demasiado grande, como si estuviera pegado a la "cámara"
       filter: "blur(20px) brightness(0) contrast(200%)",
     },
@@ -70,18 +95,18 @@ const Menu = () => {
       // Skew extremo solo en frames cortos para deformar el logo
       skewX: [0, -50, 50, -20, 0],
       filter: [
-        "blur(20px) brightness(0)", 
+        "blur(20px) brightness(0)",
         "blur(0px) brightness(3) contrast(150%)", // Flash violento
-        "blur(15px) brightness(0.2)", 
-        "blur(2px) brightness(2)", 
+        "blur(15px) brightness(0.2)",
+        "blur(2px) brightness(2)",
         "blur(10px) brightness(0.5)",
         "blur(0px) brightness(1.2)",
-        "blur(0px) brightness(1)"
+        "blur(0px) brightness(1)",
       ],
-      transition: { 
+      transition: {
         duration: 0.7, // Más rápido para que sea un impacto, no un baile
         times: [0, 0.05, 0.1, 0.2, 0.3, 0.45, 1], // Tiempos irregulares = Movimiento errático
-        ease: "linear" // IMPORTANTE: Sin suavizado, el terror es seco y cortante
+        ease: "linear", // IMPORTANTE: Sin suavizado, el terror es seco y cortante
       },
     },
   };
@@ -147,7 +172,10 @@ const Menu = () => {
       </style>
 
       {/* Post-Procesado */}
-      <canvas ref={canvasRef} className="pointer-events-none absolute inset-0 z-40 opacity-[0.15] mix-blend-screen" />
+      <canvas
+        ref={canvasRef}
+        className="pointer-events-none absolute inset-0 z-40 opacity-[0.15] mix-blend-screen"
+      />
       <div className="pointer-events-none absolute inset-0 z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.15)_50%),linear-gradient(90deg,rgba(255,0,0,0.04),rgba(0,255,0,0.01),rgba(0,0,255,0.04))] bg-[length:100%_3px,2px_100%]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square bg-red-900/5 blur-[120px] rounded-full" />
 
@@ -159,9 +187,9 @@ const Menu = () => {
           animate="visible"
           className="logo-wrap mb-10 md:mb-16 flex items-start"
         >
-          <img 
-            src={LogoIntrusion} 
-            alt="LOGO" 
+          <img
+            src={LogoIntrusion}
+            alt="LOGO"
             className="logo-img w-auto h-[45px] sm:h-[50px] md:h-[100px] lg:h-[130px] object-contain drop-shadow-[0_0_20px_rgba(185,28,28,0.7)]"
           />
         </motion.div>
@@ -179,8 +207,12 @@ const Menu = () => {
                 className="group cursor-pointer"
               >
                 <div className="flex items-center space-x-4">
-                  <span className={`h-[1px] bg-red-700 transition-all duration-500 ${activeItem === item.id ? "w-10" : "w-0"}`} />
-                  <h2 className={`menu-text text-xl md:text-3xl transition-colors duration-300 uppercase tracking-tighter ${activeItem === item.id ? "text-red-500" : "text-zinc-500"}`}>
+                  <span
+                    className={`h-[1px] bg-red-700 transition-all duration-500 ${activeItem === item.id ? "w-10" : "w-0"}`}
+                  />
+                  <h2
+                    className={`menu-text text-xl md:text-3xl transition-colors duration-300 uppercase tracking-tighter ${activeItem === item.id ? "text-red-500" : "text-zinc-500"}`}
+                  >
                     {item.label}
                   </h2>
                 </div>

@@ -195,12 +195,6 @@ const Contacto = () => {
                   user: "INTRUSIÓN_DEV",
                   link: "https://intrusiongame.itch.io",
                 },
-                {
-                  name: "Discord",
-                  icon: <FaDiscord />,
-                  user: "VOID_SERVER",
-                  link: "#",
-                },
               ].map((social, i) => (
                 <a
                   href={social.link}

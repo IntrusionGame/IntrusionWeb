@@ -13,6 +13,6 @@ export const ApartadosBlog = {
   ...blogDia0903,
   ...blogDia1003,
   ...blogDia0604,
-  ...blogDia0704
+  ...blogDia0704,
   // Aquí irás sumando los demás: ...marzo, ...abril
 };
