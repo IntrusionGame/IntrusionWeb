@@ -17,10 +17,11 @@ import Rafa from "../Imagenes/Componentes/Foto_Rafael.jpg";
 import Adrian from "../Imagenes/Componentes/FotoAdrian.jpg";
 import JuanJose from "../Imagenes/Componentes/FotoJuanJose.jpg";
 import Francisco from "../Imagenes/Componentes/FotoFrancisco.jpg";
+import Soriano from "../Imagenes/Componentes/FotoSoriano.jpg";
 
 // Base de datos de personal
 const teamMembers = [
-  { id: 1, name: "Javier Soriano Moreno", specialty: "Gamer Developer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anna", social: { Portfolio: "https://sites.google.com/view/sorieme/inicio" }, status: "online" },
+  { id: 1, name: "Javier Soriano Moreno", specialty: "Gamer Developer", image: Soriano, social: { Portfolio: "https://sites.google.com/view/sorieme/inicio" }, status: "online" },
   { id: 2, name: "David Jiménez Villena", specialty: "Web Developer / Gamer Developer", image: David, social: { Portfolio: "https://djvportfolio.vercel.app", linkedin: "https://www.linkedin.com/in/david-jimenez-villena/" }, status: "online" },
   { id: 3, name: "Luis Miguel Escuderos Alcaide", specialty: "Art 3D", image: Luismi, social: { Portfolio: "https://porfolioluisillo.carrd.co" }, status: "online" },
   { id: 4, name: "Francisco Torres Puche", specialty: "Gamer Developer", image: Francisco, social: { Portfolio: "https://sites.google.com/view/dgpp-ftp?usp=sharing" }, status: "offline" },
