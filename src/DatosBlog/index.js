@@ -6,6 +6,7 @@ import { incidentesData as blogDia1003 } from "./ContenidoBlog/blog100326.js";
 import { incidentesData as blogDia0604 } from "./ContenidoBlog/blog060426.js";
 import { incidentesData as blogDia0704 } from "./ContenidoBlog/blog070426.js";
 import { incidentesData as blogDia1304 } from "./ContenidoBlog/blog130426.js";
+import { incidentesData as blogDia1404 } from "./ContenidoBlog/blog140426.js";
 
 
 export const ApartadosBlog = {
@@ -16,5 +17,6 @@ export const ApartadosBlog = {
   ...blogDia0604,
   ...blogDia0704,
   ...blogDia1304,
+  ...blogDia1404,
   // Aquí irás sumando los demás: ...marzo, ...abril
 };

@@ -7,5 +7,6 @@ export const DatosBlog = [
   { id: "60426", titulo: "PROTOCOLO_06042026.log", fecha: "06/04/26", riesgo: "BAJO" },
   { id: "70426", titulo: "PROTOCOLO_07042026.log", fecha: "07/04/26", riesgo: "ALTO" },
   { id: "130426", titulo: "PROTOCOLO_13042026.log", fecha: "13/04/26", riesgo: "CRÍTICO" },
+  { id: "140426", titulo: "PROTOCOLO_14042026.log", fecha: "14/04/26", riesgo: "DESCONOCIDO" },
   // Cuando quieras añadir más, solo copia y pega una línea aquí.
 ];

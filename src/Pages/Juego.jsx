@@ -2,7 +2,7 @@ import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { 
   FaChevronLeft, FaUsers, FaSkullCrossbones, 
-  FaCogs, FaUserShield, FaInfoCircle 
+  FaCogs, FaUserShield, FaInfoCircle, FaTerminal 
 } from "react-icons/fa";
 
 import LogoIntrusion from "../Imagenes/LogoIntrusion.png";
@@ -106,49 +106,49 @@ const Juego = () => {
         </header>
 
         {/* SECCIÓN 1: SINOPSIS */}
-       <section className="mb-16 md:mb-20 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-  <Motion.div variants={itemVariants}>
-    <div className="flex items-center gap-4 mb-4 md:mb-6">
-      <div className="p-2 bg-red-900/10 border border-red-900/30 rounded-full">
-        <FaInfoCircle className="text-red-700 animate-pulse" />
-      </div>
-      <h2 className="text-xl md:text-2xl text-zinc-200 uppercase tracking-[0.25em] font-glitch">
-        Sinopsis Del Vacio
-      </h2>
-    </div>
-    
-    <div className="space-y-4 text-sm md:text-base leading-relaxed text-zinc-400 font-elite">
-      <p className="indent-4 md:indent-8 border-l-2 border-red-900/20 pl-4">
-        En este juego de puzzle y escape room en 3D, el jugador asume el papel de un ladrón que, al intentar robar en una casa aislada, es sorprendido y secuestrado por su siniestro propietario: un psicópata. Despierta atado en el sótano y deberá usar su ingenio para resolver enigmas, encontrar objetos ocultos y descubrir los secretos de la casa mientras intenta escapar con vida.
-      </p>
-      <p className="indent-4 md:indent-8">
-        A medida que avanza por las diferentes plantas , cada habitación presenta nuevos desafíos y peligros: códigos de colores, llaves ocultas, acertijos con objetos y un enemigo que patrulla la casa, alertado por el ruido o el ladrido de su perro. Cada puzzle resuelto acerca al jugador a la libertad… o a una muerte segura.
-      </p>
-    </div>
-  </Motion.div>
+        <section className="mb-16 md:mb-20 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          <Motion.div variants={itemVariants}>
+            <div className="flex items-center gap-4 mb-4 md:mb-6">
+              <div className="p-2 bg-red-900/10 border border-red-900/30 rounded-full">
+                <FaInfoCircle className="text-red-700 animate-pulse" />
+              </div>
+              <h2 className="text-xl md:text-2xl text-zinc-200 uppercase tracking-[0.25em] font-glitch">
+                Sinopsis Del Vacio
+              </h2>
+            </div>
+            
+            <div className="space-y-4 text-sm md:text-base leading-relaxed text-zinc-400 font-elite">
+              <p className="indent-4 md:indent-8 border-l-2 border-red-900/20 pl-4">
+                En este juego de puzzle e escape room en 3D, el jugador asume el papel de un ladrón que, al intentar robar en una casa aislada, es sorprendido y secuestrado por su siniestro propietario: un psicópata. Despierta atado en el sótano y deberá usar su ingenio para resolver enigmas, encontrar objetos ocultos y descubrir los secretos de la casa mientras intenta escapar con vida.
+              </p>
+              <p className="indent-4 md:indent-8">
+                A medida que avanza por las diferentes plantas, cada habitación presenta nuevos desafíos y peligros: códigos de colores, llaves ocultas, acertijos con objetos y un enemigo que patrulla la casa, alertado por el ruido o el ladrido de su perro. Cada puzzle resuelto acerca al jugador a la libertad… o a una muerte segura.
+              </p>
+            </div>
+          </Motion.div>
 
-  <Motion.div 
-    variants={itemVariants} 
-    className="relative aspect-video bg-black border border-zinc-800 flex items-center justify-center overflow-hidden group shadow-[0_0_30px_rgba(0,0,0,1)]"
-  >
-    {/* Efecto de rejilla de cámara de seguridad */}
-    <div className="absolute inset-0 pointer-events-none z-20 opacity-30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
-    <div className="absolute top-4 left-4 z-30 flex items-center gap-2">
-      <div className="w-2 h-2 bg-red-600 rounded-full animate-ping" />
-      <span className="text-[10px] text-red-600 font-mono tracking-tighter">REC ● LIVE_FEED</span>
-    </div>
-    
-    <div className="absolute inset-0 bg-red-900/10 mix-blend-overlay group-hover:bg-transparent transition-all duration-700" />
-    
-    {/* Placeholder con estilo de error de señal */}
-    <div className="flex flex-col items-center gap-2">
-      <span className="text-zinc-800 font-mono text-[10px] md:text-xs italic uppercase tracking-[5px] group-hover:text-red-900 transition-colors">
-        [IMAGEN_CORRUPTA]
-      </span>
-      <div className="w-16 h-[1px] bg-zinc-900 group-hover:bg-red-900/50 transition-colors" />
-    </div>
-  </Motion.div>
-</section>
+          <Motion.div 
+            variants={itemVariants} 
+            className="relative aspect-video bg-black border border-zinc-800 flex items-center justify-center overflow-hidden group shadow-[0_0_30px_rgba(0,0,0,1)]"
+          >
+            {/* Efecto de rejilla de cámara de seguridad */}
+            <div className="absolute inset-0 pointer-events-none z-20 opacity-30 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
+            <div className="absolute top-4 left-4 z-30 flex items-center gap-2">
+              <div className="w-2 h-2 bg-red-600 rounded-full animate-ping" />
+              <span className="text-[10px] text-red-600 font-mono tracking-tighter">REC ● LIVE_FEED</span>
+            </div>
+            
+            <div className="absolute inset-0 bg-red-900/10 mix-blend-overlay group-hover:bg-transparent transition-all duration-700" />
+            
+            {/* Placeholder con estilo de error de señal */}
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-zinc-800 font-mono text-[10px] md:text-xs italic uppercase tracking-[5px] group-hover:text-red-900 transition-colors">
+                [IMAGEN_CORRUPTA]
+              </span>
+              <div className="w-16 h-[1px] bg-zinc-900 group-hover:bg-red-900/50 transition-colors" />
+            </div>
+          </Motion.div>
+        </section>
 
         {/* SECCIÓN 2: MECÁNICAS PRINCIPALES */}
         <section className="mb-16 md:mb-20">
@@ -159,7 +159,7 @@ const Juego = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             {[
-              { tit: "Interactuar", d: "El jugador debera de interactuar con su entorno para realizar los puzles y avanzar." },
+              { tit: "Interactuar", d: "El jugador deberá interactuar con su entorno para realizar los puzles y avanzar." },
               { tit: "Sigilo Cuántico", d: "Desplázate entre los nodos sin alertar a los centinelas." },
               { tit: "Ingeniería Inversa", d: "Reconstruye los puzles de datos para abrir nuevas rutas." }
             ].map((mec, i) => (
@@ -175,7 +175,7 @@ const Juego = () => {
         </section>
 
         {/* SECCIÓN 3: PERSONAJES (ARCHIVOS) */}
-        <section>
+        <section className="mb-16 md:mb-24">
           <Motion.div variants={itemVariants} className="flex items-center gap-4 mb-8 md:mb-10">
             <FaUserShield className="text-red-700" />
             <h2 className="text-xl md:text-2xl text-zinc-200 uppercase tracking-widest">Sujetos_De_Prueba</h2>
@@ -196,6 +196,25 @@ const Juego = () => {
             ))}
           </div>
         </section>
+
+        {/* BOTÓN DE TEST FINAL */}
+        <Motion.section variants={itemVariants} className="flex justify-center pt-8 border-t border-zinc-900">
+          <Link to="/test" className="group relative">
+            <Motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-4 bg-red-950/20 border border-red-900/50 px-8 py-4 text-red-500 hover:bg-red-700 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(153,27,27,0.2)]"
+            >
+              <FaTerminal className="text-xl animate-pulse" />
+              <div className="flex flex-col items-start">
+                <span className="text-[10px] uppercase tracking-[0.3em] opacity-70">Acceder_Entorno</span>
+                <span className="text-lg md:text-xl font-glitch uppercase tracking-widest">Iniciar_Prueba</span>
+              </div>
+            </Motion.div>
+            {/* Elemento decorativo Glitch */}
+            <div className="absolute -inset-1 border border-red-900/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping pointer-events-none" />
+          </Link>
+        </Motion.section>
 
       </Motion.div>
     </div>
