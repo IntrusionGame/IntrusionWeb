@@ -14,24 +14,21 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto:
-          "La jefa termino de realizar el sotano",
+        texto: "La jefa terminó de realizar el sótano.",
       },
       {
         tipo: "imagen",
         src: Habitacion2,
-        caption:
-          "CAPTURA_SISTEMA: Manifestación del sotano.",
+        caption: "CAPTURA_SISTEMA: Manifestación del sótano.",
       },
       {
         tipo: "parrafo",
-        texto: "Seguir avanzando en las diferentes áreas de la casa.",
+        texto: "Se sigue avanzando en las diferentes áreas de la casa.",
       },
       {
         tipo: "imagen",
         src: Habitacion,
-        caption:
-          "CAPTURA_SISTEMA: Manifestación de la habitación.",
+        caption: "CAPTURA_SISTEMA: Manifestación de la habitación.",
       },
       {
         tipo: "titulo",
@@ -39,8 +36,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto:
-          "Subieron commit para unificar las ramas.",
+        texto: "Subieron un commit para unificar las ramas.",
       },
       {
         tipo: "subtitulo",
@@ -48,7 +44,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Arregflar el enemigo y grabar el video para el instragram.",
+        texto: "Arreglar el enemigo y grabar el vídeo para Instagram.",
       },
       {
         tipo: "subtitulo",
@@ -56,8 +52,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto:
-          "Investigó sobre el  Playtesting y reviso la implementación de fixes finales para tener ramas unidas de verdad en el proyecto..",
+        texto: "Investigó sobre el Playtesting y revisó la implementación de fixes finales para tener las ramas del proyecto unificadas correctamente.",
       },
       {
         tipo: "subtitulo",
@@ -65,7 +60,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Terminar una versión del puzle del salón ya funcional, pero con mejoras pendientes.",
+        texto: "Terminar una versión funcional del puzle del salón, con mejoras pendientes por implementar.",
       },
       {
         tipo: "subtitulo",
@@ -73,7 +68,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Seguir con el puzzle del baño y hacer un pull request para fusionarlo con development.",
+        texto: "Seguir con el puzle del baño y realizar un pull request para fusionarlo con development.",
       },
       {
         tipo: "subtitulo",
@@ -81,7 +76,7 @@ export const incidentesData = {
       },
       {
         tipo: "parrafo",
-        texto: "Terminar una versión del puzle del salón ya funcional, pero con mejoras pendientes.",
+        texto: "Terminar una versión funcional del puzle del salón, con mejoras pendientes por implementar.",
       },
       {
         tipo: "subtitulo",
@@ -91,29 +86,26 @@ export const incidentesData = {
         tipo: "parrafo",
         texto: "Configuró la pantalla de opciones en Unity para que funcione correctamente.",
       },
-       {
+      {
         tipo: "titulo",
         texto: "UI",
       },
       {
         tipo: "parrafo",
-        texto:
-          "Realizo el Menu principa, ventana desplegable de usuario, ventana de creditos, ventaa cnfitmacion de salir, y funcionalidades menu.",
+        texto: "Realizó el menú principal, ventana desplegable de usuario, ventana de créditos, ventana de confirmación de salida y funcionalidades del menú.",
       },
       {
         tipo: "titulo",
-        texto: "Web/Marketing",
+        texto: "Web / Marketing",
       },
       {
         tipo: "parrafo",
-        texto:
-          "Investigo como añadir un juego web a la pagina web que sea funcional etc y tambien grabo el video con soriano para la pagina web.",
+        texto: "Investigó cómo añadir un juego funcional a la página web y grabó el vídeo junto a Soriano para la web.",
       },
       {
         tipo: "imagen",
         src: JuegoWeb,
-        caption:
-          "CAPTURA_SISTEMA: Manifestación del juego web.",
+        caption: "CAPTURA_SISTEMA: Manifestación del juego web.",
       },
     ],
   },
