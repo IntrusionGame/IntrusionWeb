@@ -9,6 +9,10 @@ import Blog from "./Pages/Blog.jsx";
 import Blog26 from "./Pages/CotenidoBlog.jsx";
 import Juego from "./Pages/Juego.jsx";
 import Test from "./Pages/test.jsx";
+import Reporte from "./Pages/FormularioTest.jsx";
+import AnalisisReporte from "./Pages/AnalisisTesteoExterno.jsx"
+import FormularioTesteoInterno from "./Pages/TesteoInterno.jsx"
+import AnalisisReporteInterno from "./Pages/AnalisisTesteoInterno.jsx"
 
 function AppContent() {
   const location = useLocation();
@@ -21,6 +25,10 @@ function AppContent() {
         <Route path="/" element={<Menu />} />
         <Route path="/juego" element={<Juego />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/analisistesteoexterno" element={<AnalisisReporte />} />
+        <Route path="/formulariointerno" element={<FormularioTesteoInterno />} />
+        <Route path="/analisistesteointerno" element={<AnalisisReporteInterno />} />
+        <Route path="/reportetest" element={<Reporte />} />
         <Route path="/sobreNosotros" element={<SobreNosotros />} />
         <Route path="/expedientes" element={<Expedientes />} />
         <Route path="/contacto" element={<Contacto />} />
