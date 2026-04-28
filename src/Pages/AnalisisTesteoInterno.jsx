@@ -246,7 +246,7 @@ const DatosInternosPage = () => {
                 <BarChart data={contarPor("tipo_error")} barSize={24}>
                   <XAxis dataKey="name" tick={{ fill: '#52525b', fontSize: 9, fontFamily: 'Special Elite' }} axisLine={false} tickLine={false} />
                   <YAxis tick={{ fill: '#52525b', fontSize: 9 }} axisLine={false} tickLine={false} allowDecimals={false} />
-                  <Tooltip contentStyle={{ backgroundColor: '#09090b', border: '1px solid #27272a', color: '#a1a1aa', fontSize: '10px', fontFamily: 'Special Elite' }} cursor={{ fill: 'rgba(255,255,255,0.02)' }} />
+                  <Tooltip contentStyle={{ backgroundColor: '#09090b', border: '1px solid #27272a', color: '#a1a1aa', fontSize: '10px', fontFamily: 'Special Elite' }} itemStyle={{ color: '#ffffff' }} cursor={{ fill: 'rgba(255, 0, 0, 0.02)' }} />
                   <Bar dataKey="value" radius={[3, 3, 0, 0]}>
                     {contarPor("tipo_error").map((entry, i) => <Cell key={i} fill={TIPO_COLOR[entry.name] || "#b91c1c"} />)}
                   </Bar>
